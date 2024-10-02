@@ -37,7 +37,7 @@ The `ballerinax/iso20022records`library provides a collection of ISO 20022 recor
 Import the `ballerinax/iso20022records` library.
 
 ```ballerina
-import ballerinax/iso_20022_records as iso20022records;
+import ballerinax/iso20022records as iso20022records;
 ```
 
 ### Step 2: Create new ISO 20022 documents based on requirement
