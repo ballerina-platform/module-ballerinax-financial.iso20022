@@ -6,7 +6,7 @@ ISO 20022 is an international standard for financial messaging that allows the e
 
 The `ballerinax/iso20022records`library provides a collection of ISO 20022 records based on the corresponding XSDs, enabling seamless integration with financial messaging systems. The library is designed to facilitate the creation, manipulation, and parsing of ISO 20022-compliant messages, offering a standardized approach for handling complex financial data within Ballerina applications. 
 
-## Supported ISO 20022 Message Types
+## Supported Message Types
 
 - camt.026.001.10
 - camt.027.001.10
@@ -56,12 +56,5 @@ ISORecord:Pain001Document pain001Document = {
 };
 ```
 
-## Report issues
 
-To report bugs, request new features, start new discussions, view project boards, etc., go to
-the [Ballerina library parent repository](https://github.com/ballerina-platform/ballerina-library).
 
-## Useful Links
-
-- Chat live with us via our [Discord server](https://discord.gg/ballerinalang).
-- Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.
