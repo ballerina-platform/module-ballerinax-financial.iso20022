@@ -14,8 +14,12 @@
 // specific language governing permissions and limitations
 // under the License.
 
+# Defines the structure for the Camt031Document1.
 public type Camt031Document1 Camt031Document;
 
+# Defines the structure for Camt031Document, a record that holds the rejection investigation details.
+#
+# + RjctInvstgtn - The rejection investigation details
 public type Camt031Document record {|
     RejectInvestigationV07 RjctInvstgtn;
 |};
@@ -24,10 +28,20 @@ public enum InvestigationRejection1Code {
     NFND, NAUT, UKNW, PCOR, WMSG, RNCR, MROI
 };
 
+# Defines the Investigation Rejection Justification, which provides the reason for rejecting an investigation.
+#
+# + RjctnRsn - The code specifying the reason for rejecting the investigation
 public type InvestigationRejectionJustification1 record {|
     InvestigationRejection1Code RjctnRsn;
 |};
 
+# Defines the Reject Investigation Version 07 structure.
+# It contains information related to a case assignment, case details, rejection justification, and any supplementary data.
+#
+# + Assgnmt - Case assignment details
+# + Case - Information about the case being rejected, if available
+# + Justfn - The justification for rejecting the investigation
+# + SplmtryData - Optional supplementary data for the rejection
 public type RejectInvestigationV07 record {|
     CaseAssignment6 Assgnmt;
     Case6 Case?;

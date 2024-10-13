@@ -14,17 +14,32 @@
 // specific language governing permissions and limitations
 // under the License.
 
+# Defines the structure for the Camt056Document1.
 public type Camt056Document1 Camt056Document;
 
+# Defines the structure for Camt056Document, which contains the FI to FI payment cancellation request details.
+#
+# + FIToFIPmtCxlReq - The FI to FI payment cancellation request
 public type Camt056Document record {|
     FIToFIPaymentCancellationRequestV11 FIToFIPmtCxlReq;
 |};
 
+# Defines the structure for UnderlyingTransaction34, which includes original group information and payment transactions related to the cancellation.
+#
+# + OrgnlGrpInfAndCxl - Original group information and cancellation details
+# + TxInf - Payment transaction information
 public type UnderlyingTransaction34 record {|
     OriginalGroupHeader21 OrgnlGrpInfAndCxl?;
     PaymentTransaction155[] TxInf?;
 |};
 
+# Defines the structure for FIToFIPaymentCancellationRequestV11, which contains the details of the FI to FI payment cancellation request.
+#
+# + Assgnmt - Case assignment details
+# + Case - Optional case details
+# + CtrlData - Control data related to the cancellation request
+# + Undrlyg - Underlying transactions related to the cancellation
+# + SplmtryData - Optional supplementary data
 public type FIToFIPaymentCancellationRequestV11 record {|
     CaseAssignment6 Assgnmt;
     Case6 Case?;
@@ -33,6 +48,23 @@ public type FIToFIPaymentCancellationRequestV11 record {|
     SupplementaryData1[] SplmtryData?;
 |};
 
+# Defines the structure for PaymentTransaction155, which contains details of the payment transaction being cancelled.
+#
+# + CxlId - Cancellation identifier
+# + Case - Optional case details
+# + OrgnlGrpInf - Original group information
+# + OrgnlInstrId - Original instruction identifier
+# + OrgnlEndToEndId - Original end-to-end identifier
+# + OrgnlTxId - Original transaction identifier
+# + OrgnlUETR - Original unique end-to-end transaction reference
+# + OrgnlClrSysRef - Original clearing system reference
+# + OrgnlIntrBkSttlmAmt - Original interbank settlement amount
+# + OrgnlIntrBkSttlmDt - Original interbank settlement date
+# + Assgnr - Assignor details
+# + Assgne - Assignee details
+# + CxlRsnInf - Cancellation reasons
+# + OrgnlTxRef - Original transaction reference
+# + SplmtryData - Optional supplementary data
 public type PaymentTransaction155 record {|
     Max35Text CxlId?;
     Case6 Case?;

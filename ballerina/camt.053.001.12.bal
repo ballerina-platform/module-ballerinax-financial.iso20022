@@ -14,8 +14,27 @@
 // specific language governing permissions and limitations
 // under the License.
 
+# Defines the structure for the Camt053Document1.
 public type Camt053Document1 Camt053Document;
 
+# Defines the structure for AccountStatement13, which contains the details of an account statement.
+#
+# + Id - Unique identifier for the statement
+# + StmtPgntn - Pagination information for the statement
+# + ElctrncSeqNb - Electronic sequence number
+# + RptgSeq - Reporting sequence range
+# + LglSeqNb - Legal sequence number
+# + CreDtTm - Creation date and time of the statement
+# + FrToDt - The reporting period covered by the statement
+# + CpyDplctInd - Indicates if the statement is a copy or duplicate
+# + RptgSrc - Reporting source choice
+# + Acct - Cash account details
+# + RltdAcct - Related cash account details
+# + Intrst - Account interest details
+# + Bal - Cash balance details
+# + TxsSummry - Summary of transactions
+# + Ntry - Report entries
+# + AddtlStmtInf - Additional statement information
 public type AccountStatement13 record {|
     Max35Text Id;
     Pagination1 StmtPgntn?;
@@ -35,12 +54,20 @@ public type AccountStatement13 record {|
     Max500Text AddtlStmtInf?;
 |};
 
+# Defines the structure for BankToCustomerStatementV12, which includes a group header and multiple account statements.
+#
+# + GrpHdr - Header information for the group of statements
+# + Stmt - Array of account statements
+# + SplmtryData - Optional supplementary data
 public type BankToCustomerStatementV12 record {|
     GroupHeader116 GrpHdr;
     AccountStatement13[] Stmt;
     SupplementaryData1[] SplmtryData?;
 |};
 
+# Defines the structure for the Camt053Document, which contains the bank-to-customer statement details.
+#
+# + BkToCstmrStmt - The bank-to-customer statement
 public type Camt053Document record {|
     BankToCustomerStatementV12 BkToCstmrStmt;
 |};

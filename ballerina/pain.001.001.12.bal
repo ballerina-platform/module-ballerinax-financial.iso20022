@@ -14,8 +14,23 @@
 // specific language governing permissions and limitations
 // under the License.
 
+# Defines the structure for the Pain001Document1.
 public type Pain001Document1 Pain001Document;
 
+# Defines the structure for Cheque19, which contains details about a cheque.
+#
+# + ChqTp - Optional cheque type
+# + ChqNb - Optional cheque number
+# + ChqFr - Optional cheque from party information
+# + DlvryMtd - Optional delivery method for the cheque
+# + DlvrTo - Optional delivery address for the cheque
+# + InstrPrty - Optional instruction priority
+# + ChqMtrtyDt - Optional maturity date for the cheque
+# + FrmsCd - Optional form code for the cheque
+# + MemoFld - Optional memo fields
+# + RgnlClrZone - Optional regional clearing zone
+# + PrtLctn - Optional print location
+# + Sgntr - Optional signatures for the cheque
 public type Cheque19 record {|
     ChequeType2Code ChqTp?;
     Max35Text ChqNb?;
@@ -31,15 +46,50 @@ public type Cheque19 record {|
     Max70Text[] Sgntr?;
 |};
 
+# Defines an optional delivery method code for cheque delivery.
 public type ChequeDelivery1Code string;
 
+# Defines the structure for ChequeDeliveryMethod1Choice, which provides options for cheque delivery methods.
+#
+# + Cd - Optional delivery method code
+# + Prtry - Optional proprietary delivery method
 public type ChequeDeliveryMethod1Choice record {|
     ChequeDelivery1Code Cd?;
     Max35Text Prtry?;
 |};
 
+# Defines different types of cheques.
 public type ChequeType2Code string;
 
+# Defines the structure for CreditTransferTransaction61, which details a credit transfer transaction.
+#
+# + PmtId - Payment identification information
+# + PmtTpInf - Optional payment type information
+# + Amt - Amount to be transferred
+# + XchgRateInf - Optional exchange rate information
+# + ChrgBr - Optional charge bearer information
+# + MndtRltdInf - Optional mandate-related information
+# + ChqInstr - Optional cheque instruction
+# + UltmtDbtr - Optional ultimate debtor identification
+# + IntrmyAgt1 - Optional intermediary agent identification
+# + IntrmyAgt1Acct - Optional intermediary agent account information
+# + IntrmyAgt2 - Optional intermediary agent identification
+# + IntrmyAgt2Acct - Optional intermediary agent account information
+# + IntrmyAgt3 - Optional intermediary agent identification
+# + IntrmyAgt3Acct - Optional intermediary agent account information
+# + CdtrAgt - Creditor agent identification
+# + CdtrAgtAcct - Creditor agent account information
+# + Cdtr - Creditor identification
+# + CdtrAcct - Creditor account information
+# + UltmtCdtr - Optional ultimate creditor identification
+# + InstrForCdtrAgt - Optional instruction for the creditor agent
+# + InstrForDbtrAgt - Optional instruction for the debtor agent
+# + Purp - Optional purpose information
+# + RgltryRptg - Optional regulatory reporting information
+# + Tax - Optional tax data
+# + RltdRmtInf - Optional related remittance information
+# + RmtInf - Optional remittance information
+# + SplmtryData - Optional supplementary data
 public type CreditTransferTransaction61 record {|
     PaymentIdentification6 PmtId;
     PaymentTypeInformation26 PmtTpInf?;
@@ -70,16 +120,30 @@ public type CreditTransferTransaction61 record {|
     SupplementaryData1[] SplmtryData?;
 |};
 
+# Defines the structure for CustomerCreditTransferInitiationV12, containing details about customer credit transfer initiation.
+#
+# + GrpHdr - Group header information for the credit transfer initiation
+# + PmtInf - Array of payment instruction information
+# + SplmtryData - Optional supplementary data
 public type CustomerCreditTransferInitiationV12 record {|
     GroupHeader114 GrpHdr;
     PaymentInstruction44[] PmtInf;
     SupplementaryData1[] SplmtryData?;
 |};
 
+# Defines the structure for Pain001Document, which encapsulates the customer credit transfer initiation information.
+#
+# + CstmrCdtTrfInitn - Customer credit transfer initiation information
 public type Pain001Document record {|
     CustomerCreditTransferInitiationV12 CstmrCdtTrfInitn;
 |};
 
+# Defines the structure for ExchangeRate1, which provides exchange rate information.
+#
+# + UnitCcy - Optional unit currency
+# + XchgRate - Optional exchange rate value
+# + RateTp - Optional exchange rate type
+# + CtrctId - Optional contract ID for the exchange rate
 public type ExchangeRate1 record {|
     ActiveOrHistoricCurrencyCode UnitCcy?;
     BaseOneRate XchgRate?;
@@ -87,10 +151,22 @@ public type ExchangeRate1 record {|
     Max35Text CtrctId?;
 |};
 
+# Defines the structure for ExchangeRateType1Code, representing different exchange rate types.
 public type ExchangeRateType1Code string;
 
+# Defines the structure for ExternalDebtorAgentInstruction1Code, representing external instructions for the debtor agent.
 public type ExternalDebtorAgentInstruction1Code string;
 
+# Defines the structure for GroupHeader114, which contains group header information for the credit transfer initiation.
+#
+# + MsgId - Message identification
+# + CreDtTm - Creation date and time
+# + Authstn - Optional authorization information
+# + NbOfTxs - Number of transactions
+# + CtrlSum - Optional control sum for the group of transactions
+# + InitgPty - Initiating party information
+# + FwdgAgt - Optional forwarding agent information
+# + InitnSrc - Optional payment initiation source
 public type GroupHeader114 record {|
     Max35Text MsgId;
     ISODateTime CreDtTm;
@@ -102,17 +178,47 @@ public type GroupHeader114 record {|
     PaymentInitiationSource1 InitnSrc?;
 |};
 
+# Defines the structure for InstructionForDebtorAgent1, which provides instructions for the debtor agent.
+#
+# + Cd - External debtor agent instruction code
+# + InstrInf - Instruction information
 public type InstructionForDebtorAgent1 record {|
     ExternalDebtorAgentInstruction1Code Cd?;
     Max140Text InstrInf?;
 |};
 
+# Defines the structure for PaymentInitiationSource1, which represents the source of payment initiation.
+#
+# + Nm - Name of the payment initiation source
+# + Prvdr - Optional provider information
+# + Vrsn - Optional version information
 public type PaymentInitiationSource1 record {|
     Max140Text Nm;
     Max35Text Prvdr?;
     Max35Text Vrsn?;
 |};
 
+# Defines the structure for PaymentInstruction44, which contains details about individual payment instructions.
+#
+# + PmtInfId - Payment instruction identification
+# + PmtMtd - Payment method
+# + ReqdAdvcTp - Optional required advice type
+# + BtchBookg - Optional batch booking indicator
+# + NbOfTxs - Optional number of transactions
+# + CtrlSum - Optional control sum for the payment instruction
+# + PmtTpInf - Optional payment type information
+# + ReqdExctnDt - Required execution date
+# + PoolgAdjstmntDt - Optional pooling adjustment date
+# + Dbtr - Debtor identification
+# + DbtrAcct - Debtor account information
+# + DbtrAgt - Debtor agent information
+# + DbtrAgtAcct - Debtor agent account information
+# + InstrForDbtrAgt - Optional instruction for the debtor agent
+# + UltmtDbtr - Optional ultimate debtor identification
+# + ChrgBr - Optional charge bearer information
+# + ChrgsAcct - Optional charges account information
+# + ChrgsAcctAgt - Optional charges account agent information
+# + CdtTrfTxInf - Array of credit transfer transaction information
 public type PaymentInstruction44 record {
     Max35Text PmtInfId;
     PaymentMethod3Code PmtMtd;
@@ -135,8 +241,15 @@ public type PaymentInstruction44 record {
     CreditTransferTransaction61[] CdtTrfTxInf;
 };
 
+# Defines the payment method codes for transactions.
 public type PaymentMethod3Code string;
 
+# Defines the structure for PaymentTypeInformation26, which contains payment type information details.
+#
+# + InstrPrty - Optional instruction priority
+# + SvcLvl - Optional service level
+# + LclInstrm - Optional local instrument information
+# + CtgyPurp - Optional category purpose
 public type PaymentTypeInformation26 record {
     Priority2Code InstrPrty?;
     ServiceLevel8Choice[] SvcLvl?;

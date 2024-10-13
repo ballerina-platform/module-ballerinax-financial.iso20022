@@ -14,12 +14,22 @@
 // specific language governing permissions and limitations
 // under the License.
 
+# Defines the structure for the Camt033Document1.
 public type Camt033Document1 Camt033Document;
 
+# Defines the structure for Camt033Document, a record that holds the request for duplicate message details.
+#
+# + ReqForDplct - The request for a duplicate of the previously sent message
 public type Camt033Document record {|
     RequestForDuplicateV07 ReqForDplct;
 |};
 
+# Defines the structure for the Request for Duplicate Version 07 message.
+# It contains information related to a case assignment, case details, and any supplementary data.
+#
+# + Assgnmt - Case assignment details
+# + Case - Information about the case for which a duplicate is being requested, if available
+# + SplmtryData - Optional supplementary data for the request
 public type RequestForDuplicateV07 record {|
     CaseAssignment6 Assgnmt;
     Case6 Case?;

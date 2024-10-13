@@ -14,50 +14,90 @@
 // specific language governing permissions and limitations
 // under the License.
 
+# Defines the Camt026Document1 structure.
 public type Camt026Document1 Camt026Document;
 
+# Defines the AMLIndicator structure.
 public type AMLIndicator boolean;
 
+# Defines the Camt026Document structure.
+#
+# + UblToApply - The unable to apply information
 public type Camt026Document record {|
     UnableToApplyV10 UblToApply;
 |};
 
+# Defines the ExternalUnableToApplyIncorrectData1Code structure.
 public type ExternalUnableToApplyIncorrectData1Code string;
 
+# Defines the ExternalUnableToApplyMissingData1Code structure.
 public type ExternalUnableToApplyMissingData1Code string;
 
+# Defines the IncorrectData1Choice structure.
+#
+# + Cd - The incorrect data code  
+# + Prtry - The proprietary information for incorrect data
 public type IncorrectData1Choice record {|
     ExternalUnableToApplyIncorrectData1Code Cd?;
     Max35Text Prtry?;
 |};
 
+# Defines the MissingData1Choice structure.
+#
+# + Cd - The missing data code  
+# + Prtry - The proprietary information for missing data
 public type MissingData1Choice record {|
     ExternalUnableToApplyMissingData1Code Cd?;
     Max35Text Prtry?;
 |};
 
+# Defines the MissingOrIncorrectData1 structure.
+#
+# + AMLReq - The AML requirement  
+# + MssngInf - The missing information details  
+# + IncrrctInf - The incorrect information details
 public type MissingOrIncorrectData1 record {|
     AMLIndicator AMLReq?;
     UnableToApplyMissing2[10] MssngInf?;
     UnableToApplyIncorrect2[10] IncrrctInf?;
 |};
 
+# Defines the UnableToApplyIncorrect2 structure.
+#
+# + Tp - The incorrect data type  
+# + AddtlIncrrctInf - Additional incorrect information
 public type UnableToApplyIncorrect2 record {|
     IncorrectData1Choice Tp;
     Max140Text AddtlIncrrctInf?;
 |};
 
+# Defines the UnableToApplyJustification4Choice structure.
+#
+# + AnyInf - Any available information  
+# + MssngOrIncrrctInf - Missing or incorrect information details  
+# + PssblDplctInstr - Possible duplicate instruction indicator
 public type UnableToApplyJustification4Choice record {|
     YesNoIndicator AnyInf?;
     MissingOrIncorrectData1 MssngOrIncrrctInf?;
     TrueFalseIndicator PssblDplctInstr?;
 |};
 
+# Defines the UnableToApplyMissing2 structure.
+#
+# + Tp - The missing data type  
+# + AddtlMssngInf - Additional missing information
 public type UnableToApplyMissing2 record {|
     MissingData1Choice Tp;
     Max140Text AddtlMssngInf?;
 |};
 
+# Defines the UnableToApplyV10 structure.
+#
+# + Assgnmt - The case assignment details  
+# + Case - The case details  
+# + Undrlyg - The underlying transaction  
+# + Justfn - The justification for the unable to apply status  
+# + SplmtryData - Any supplementary data
 public type UnableToApplyV10 record {|
     CaseAssignment6 Assgnmt;
     Case6 Case?;

@@ -14,8 +14,49 @@
 // specific language governing permissions and limitations
 // under the License.
 
+# Defines the structure for the Pacs009Document1.
 public type Pac009Document1 Pacs009Document;
 
+# Defines the structure for CreditTransferTransaction62, which details a credit transfer transaction.
+#
+# + PmtId - Payment identification information
+# + PmtTpInf - Optional payment type information
+# + IntrBkSttlmAmt - Interbank settlement amount
+# + IntrBkSttlmDt - Optional interbank settlement date
+# + SttlmPrty - Optional settlement priority
+# + SttlmTmIndctn - Optional settlement time indication
+# + SttlmTmReq - Optional settlement time request
+# + PrvsInstgAgt1 - Optional previous instructing agent information
+# + PrvsInstgAgt1Acct - Optional previous instructing agent account information
+# + PrvsInstgAgt2 - Optional previous instructing agent information
+# + PrvsInstgAgt2Acct - Optional previous instructing agent account information
+# + PrvsInstgAgt3 - Optional previous instructing agent information
+# + PrvsInstgAgt3Acct - Optional previous instructing agent account information
+# + InstgAgt - Instructing agent information
+# + InstdAgt - Instructed agent information
+# + IntrmyAgt1 - Optional intermediary agent information
+# + IntrmyAgt1Acct - Optional intermediary agent account information
+# + IntrmyAgt2 - Optional intermediary agent information
+# + IntrmyAgt2Acct - Optional intermediary agent account information
+# + IntrmyAgt3 - Optional intermediary agent information
+# + IntrmyAgt3Acct - Optional intermediary agent account information
+# + UltmtDbtr - Optional ultimate debtor identification
+# + Dbtr - Debtor identification
+# + DbtrAcct - Optional debtor account information
+# + DbtrAgt - Optional debtor agent information
+# + DbtrAgtAcct - Optional debtor agent account information
+# + CdtrAgt - Optional creditor agent information
+# + CdtrAgtAcct - Optional creditor agent account information
+# + Cdtr - Creditor identification
+# + CdtrAcct - Optional creditor account information
+# + UltmtCdtr - Optional ultimate creditor identification
+# + InstrForCdtrAgt - Array of instructions for the creditor agent
+# + InstrForNxtAgt - Array of instructions for the next agent
+# + Purp - Optional purpose information
+# + RmtInf - Optional remittance information
+# + UndrlygAllcn - Array of underlying allocations
+# + UndrlygCstmrCdtTrf - Optional underlying customer credit transfer information
+# + SplmtryData - Optional supplementary data
 public type CreditTransferTransaction62 record {|
     PaymentIdentification13 PmtId;
     PaymentTypeInformation28 PmtTpInf?;
@@ -57,6 +98,36 @@ public type CreditTransferTransaction62 record {|
     SupplementaryData1[] SplmtryData?;
 |};
 
+# Defines the structure for CreditTransferTransaction63, which contains additional details for a credit transfer transaction.
+#
+# + UltmtDbtr - Optional ultimate debtor identification
+# + InitgPty - Optional initiating party information
+# + Dbtr - Debtor identification
+# + DbtrAcct - Optional debtor account information
+# + DbtrAgt - Debtor agent information
+# + DbtrAgtAcct - Optional debtor agent account information
+# + PrvsInstgAgt1 - Optional previous instructing agent information
+# + PrvsInstgAgt1Acct - Optional previous instructing agent account information
+# + PrvsInstgAgt2 - Optional previous instructing agent information
+# + PrvsInstgAgt2Acct - Optional previous instructing agent account information
+# + PrvsInstgAgt3 - Optional previous instructing agent information
+# + PrvsInstgAgt3Acct - Optional previous instructing agent account information
+# + IntrmyAgt1 - Optional intermediary agent information
+# + IntrmyAgt1Acct - Optional intermediary agent account information
+# + IntrmyAgt2 - Optional intermediary agent information
+# + IntrmyAgt2Acct - Optional intermediary agent account information
+# + IntrmyAgt3 - Optional intermediary agent information
+# + IntrmyAgt3Acct - Optional intermediary agent account information
+# + CdtrAgt - Creditor agent information
+# + CdtrAgtAcct - Optional creditor agent account information
+# + Cdtr - Creditor identification
+# + CdtrAcct - Optional creditor account information
+# + UltmtCdtr - Optional ultimate creditor identification
+# + InstrForCdtrAgt - Array of instructions for the creditor agent
+# + InstrForNxtAgt - Array of instructions for the next agent
+# + Tax - Optional tax information
+# + RmtInf - Optional remittance information
+# + InstdAmt - Optional instructed amount
 public type CreditTransferTransaction63 record {|
     PartyIdentification272 UltmtDbtr?;
     PartyIdentification272 InitgPty?;
@@ -88,10 +159,18 @@ public type CreditTransferTransaction63 record {|
     ActiveOrHistoricCurrencyAndAmount InstdAmt?;
 |};
 
+# Defines the structure for Pacs009Document, which encapsulates the financial institution credit transfer transaction information.
+#
+# + FICdtTrf - Financial institution credit transfer transaction information
 public type Pacs009Document record {|
     FinancialInstitutionCreditTransferV11 FICdtTrf;
 |};
 
+# Defines the structure for FinancialInstitutionCreditTransferV11, which contains details about financial institution credit transfer transactions.
+#
+# + GrpHdr - Group header information for the credit transfer transaction
+# + CdtTrfTxInf - Array of credit transfer transaction information
+# + SplmtryData - Optional supplementary data
 public type FinancialInstitutionCreditTransferV11 record {|
     GroupHeader113 GrpHdr;
     CreditTransferTransaction62[] CdtTrfTxInf;

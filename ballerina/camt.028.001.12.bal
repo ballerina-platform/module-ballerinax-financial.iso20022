@@ -14,8 +14,16 @@
 // specific language governing permissions and limitations
 // under the License.
 
+# Defines the Camt028Document123 structure.
 public type Camt028Document123 Camt028Document;
 
+# Defines the AdditionalPaymentInformationV12 structure.
+#
+# + Assgnmt - The case assignment details  
+# + Case - The case details  
+# + Undrlyg - The underlying transaction  
+# + Inf - Payment complementary information  
+# + SplmtryData - Any supplementary data
 public type AdditionalPaymentInformationV12 record {|
     CaseAssignment6 Assgnmt;
     Case6 Case?;
@@ -24,10 +32,54 @@ public type AdditionalPaymentInformationV12 record {|
     SupplementaryData1[] SplmtryData?;
 |};
 
+# Defines the Camt028Document structure.
+#
+# + AddtlPmtInf - Additional payment information details
 public type Camt028Document record {|
     AdditionalPaymentInformationV12 AddtlPmtInf;
 |};
 
+# Defines the PaymentComplementaryInformation11 structure.
+#
+# + InstrId - Instruction identification  
+# + EndToEndId - End-to-end identification  
+# + TxId - Transaction identification  
+# + PmtTpInf - Payment type information  
+# + ReqdExctnDt - Requested execution date  
+# + ReqdColltnDt - Requested collection date  
+# + IntrBkSttlmDt - Interbank settlement date  
+# + Amt - Amount details  
+# + IntrBkSttlmAmt - Interbank settlement amount  
+# + ChrgBr - Charge bearer type  
+# + UltmtDbtr - Ultimate debtor identification  
+# + Dbtr - Debtor identification  
+# + DbtrAcct - Debtor account information  
+# + DbtrAgt - Debtor agent identification  
+# + DbtrAgtAcct - Debtor agent account  
+# + SttlmInf - Settlement information  
+# + IntrmyAgt1 - Intermediary agent 1 details  
+# + IntrmyAgt1Acct - Intermediary agent 1 account  
+# + IntrmyAgt2 - Intermediary agent 2 details  
+# + IntrmyAgt2Acct - Intermediary agent 2 account  
+# + IntrmyAgt3 - Intermediary agent 3 details  
+# + IntrmyAgt3Acct - Intermediary agent 3 account  
+# + CdtrAgt - Creditor agent details  
+# + CdtrAgtAcct - Creditor agent account details  
+# + Cdtr - Creditor identification  
+# + CdtrAcct - Creditor account information  
+# + UltmtCdtr - Ultimate creditor identification  
+# + Purp - Purpose of the payment  
+# + InstrForDbtrAgt - Instructions for debtor agent  
+# + PrvsInstgAgt1 - Previous instructing agent 1 details  
+# + PrvsInstgAgt1Acct - Previous instructing agent 1 account  
+# + PrvsInstgAgt2 - Previous instructing agent 2 details  
+# + PrvsInstgAgt2Acct - Previous instructing agent 2 account  
+# + PrvsInstgAgt3 - Previous instructing agent 3 details  
+# + PrvsInstgAgt3Acct - Previous instructing agent 3 account  
+# + InstrForNxtAgt - Instructions for next agent  
+# + InstrForCdtrAgt - Instructions for creditor agent  
+# + RltdRmtInf - Related remittance information  
+# + RmtInf - Remittance information
 public type PaymentComplementaryInformation11 record {|
     Max35Text InstrId?;
     Max35Text EndToEndId?;

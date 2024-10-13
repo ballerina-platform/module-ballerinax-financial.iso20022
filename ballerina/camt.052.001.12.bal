@@ -14,8 +14,27 @@
 // specific language governing permissions and limitations
 // under the License.
 
+# Defines the structure for the Camt052Document1.
 public type Camt052Document1 Camt052Document;
 
+# Defines the structure for AccountReport33, which contains the details of an account report.
+#
+# + Id - Unique identifier for the report
+# + RptPgntn - Pagination information for the report
+# + ElctrncSeqNb - Electronic sequence number
+# + RptgSeq - Reporting sequence range
+# + LglSeqNb - Legal sequence number
+# + CreDtTm - Creation date and time of the report
+# + FrToDt - The reporting period covered by the report
+# + CpyDplctInd - Indicates if the report is a copy or duplicate
+# + RptgSrc - Reporting source choice
+# + Acct - Cash account details
+# + RltdAcct - Related cash account details
+# + Intrst - Account interest details
+# + Bal - Cash balance details
+# + TxsSummry - Summary of transactions
+# + Ntry - Report entries
+# + AddtlRptInf - Additional reporting information
 public type AccountReport33 record {|
     Max35Text Id;
     Pagination1 RptPgntn?;
@@ -35,12 +54,20 @@ public type AccountReport33 record {|
     Max500Text AddtlRptInf?;
 |};
 
+# Defines the structure for BankToCustomerAccountReportV12, which includes a group header and multiple account reports.
+#
+# + GrpHdr - Header information for the group of reports
+# + Rpt - Array of account reports
+# + SplmtryData - Optional supplementary data
 public type BankToCustomerAccountReportV12 record {|
     GroupHeader116 GrpHdr;
     AccountReport33[] Rpt;
     SupplementaryData1[] SplmtryData?;
 |};
 
+# Defines the structure for the Camt052Document, which contains the bank-to-customer account report details.
+#
+# + BkToCstmrAcctRpt - The bank-to-customer account report
 public type Camt052Document record {|
     BankToCustomerAccountReportV12 BkToCstmrAcctRpt;
 |};

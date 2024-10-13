@@ -14,8 +14,26 @@
 // specific language governing permissions and limitations
 // under the License.
 
+# Defines the structure for the Camt054Document1.
 public type Camt054Document1 Camt054Document;
 
+# Defines the structure for AccountNotification22, which contains the details of an account notification.
+#
+# + Id - Unique identifier for the notification
+# + NtfctnPgntn - Pagination information for the notification
+# + ElctrncSeqNb - Electronic sequence number
+# + RptgSeq - Reporting sequence range
+# + LglSeqNb - Legal sequence number
+# + CreDtTm - Creation date and time of the notification
+# + FrToDt - The reporting period covered by the notification
+# + CpyDplctInd - Indicates if the notification is a copy or duplicate
+# + RptgSrc - Reporting source choice
+# + Acct - Cash account details
+# + RltdAcct - Related cash account details
+# + Intrst - Account interest details
+# + TxsSummry - Summary of transactions
+# + Ntry - Report entries
+# + AddtlNtfctnInf - Additional notification information
 public type AccountNotification22 record {|
     Max35Text Id;
     Pagination1 NtfctnPgntn?;
@@ -34,12 +52,20 @@ public type AccountNotification22 record {|
     Max500Text AddtlNtfctnInf?;
 |};
 
+# Defines the structure for BankToCustomerDebitCreditNotificationV12, which includes a group header and multiple account notifications.
+#
+# + GrpHdr - Header information for the group of notifications
+# + Ntfctn - Array of account notifications
+# + SplmtryData - Optional supplementary data
 public type BankToCustomerDebitCreditNotificationV12 record {|
     GroupHeader116 GrpHdr;
     AccountNotification22[] Ntfctn;
     SupplementaryData1[] SplmtryData?;
 |};
 
+# Defines the structure for the Camt054Document, which contains the bank-to-customer debit/credit notification details.
+#
+# + BkToCstmrDbtCdtNtfctn - The bank-to-customer debit/credit notification
 public type Camt054Document record {|
     BankToCustomerDebitCreditNotificationV12 BkToCstmrDbtCdtNtfctn;
 |};

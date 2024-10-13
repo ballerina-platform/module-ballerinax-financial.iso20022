@@ -14,8 +14,22 @@
 // specific language governing permissions and limitations
 // under the License.
 
+# Defines the structure for the Camt057Document1.
 public type Camt057Document1 Camt057Document;
 
+# Defines the structure for AccountNotification23, which includes account-related notification details.
+#
+# + Id - Identifier for the notification
+# + Acct - Account details
+# + AcctOwnr - Account owner details
+# + AcctSvcr - Account servicing institution details
+# + RltdAcct - Related account details
+# + TtlAmt - Total amount involved in the notification
+# + XpctdValDt - Expected value date
+# + Dbtr - Debtor details
+# + DbtrAgt - Debtor agent details
+# + IntrmyAgt - Intermediary agent details
+# + Itm - Array of notification items
 public type AccountNotification23 record {|
     Max35Text Id;
     CashAccount40 Acct?;
@@ -30,10 +44,31 @@ public type AccountNotification23 record {|
     NotificationItem9[] Itm;
 |};
 
+# Defines the structure for Camt057Document, which contains the notification to receive details.
+#
+# + NtfctnToRcv - The notification to receive
 public type Camt057Document record {|
     NotificationToReceiveV08 NtfctnToRcv;
 |};
 
+# Defines the structure for NotificationItem9, representing individual notification item details.
+#
+# + Id - Identifier for the notification item
+# + EndToEndId - Optional end-to-end identifier
+# + UETR - Unique end-to-end transaction reference
+# + Acct - Account details
+# + AcctOwnr - Account owner details
+# + AcctSvcr - Account servicing institution details
+# + RltdAcct - Related account details
+# + Amt - Amount related to the notification item
+# + XpctdValDt - Expected value date
+# + Dbtr - Debtor details
+# + DbtrAgt - Debtor agent details
+# + IntrmyAgt - Intermediary agent details
+# + Purp - Purpose of the transaction
+# + RltdRmtInf - Related remittance information
+# + RmtInf - Remittance information
+# + UndrlygAllcn - Underlying allocation details
 public type NotificationItem9 record {|
     Max35Text Id;
     Max35Text EndToEndId?;
@@ -53,6 +88,11 @@ public type NotificationItem9 record {|
     TransactionAllocation1[] UndrlygAllcn?;
 |};
 
+# Defines the structure for NotificationToReceiveV08, which includes the group header and notification details.
+#
+# + GrpHdr - Group header information
+# + Ntfctn - Account notification details
+# + SplmtryData - Optional supplementary data
 public type NotificationToReceiveV08 record {|
     GroupHeader117 GrpHdr;
     AccountNotification23 Ntfctn;

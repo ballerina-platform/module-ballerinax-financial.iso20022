@@ -14,8 +14,17 @@
 // specific language governing permissions and limitations
 // under the License.
 
+# Defines the Camt027Document1 structure.
 public type Camt027Document1 Camt027Document;
 
+# Defines the ClaimNonReceiptV10 structure.
+#
+# + Assgnmt - The case assignment details  
+# + Case - The case details  
+# + Undrlyg - The underlying transaction  
+# + CoverDtls - Missing cover details  
+# + InstrForAssgne - Instructions for the assignee  
+# + SplmtryData - Any supplementary data
 public type ClaimNonReceiptV10 record {|
     CaseAssignment6 Assgnmt;
     Case6 Case?;
@@ -25,22 +34,40 @@ public type ClaimNonReceiptV10 record {|
     SupplementaryData1[] SplmtryData?;
 |};
 
+# Defines the Camt027Document structure.
+#
+# + ClmNonRct - Claim non-receipt details
 public type Camt027Document record {|
     ClaimNonReceiptV10 ClmNonRct;
 |};
 
+# Defines the ExternalAgentInstruction1Code structure.
 public type ExternalAgentInstruction1Code string;
 
+# Defines the InstructionForAssignee1 structure.
+#
+# + Cd - The agent instruction code  
+# + InstrInf - Additional instruction information
 public type InstructionForAssignee1 record {|
     ExternalAgentInstruction1Code Cd?;
     Max140Text InstrInf?;
 |};
 
+# Defines the MissingCover6 structure.
+#
+# + MssngCoverInd - Indicates whether the cover is missing  
+# + CoverCrrctn - Details for settlement correction
 public type MissingCover6 record {|
     YesNoIndicator MssngCoverInd;
     SettlementInstruction16 CoverCrrctn?;
 |};
 
+# Defines the SettlementInstruction16 structure.
+#
+# + InstgRmbrsmntAgt - Instructing reimbursement agent details  
+# + InstgRmbrsmntAgtAcct - Account details of the instructing reimbursement agent  
+# + InstdRmbrsmntAgt - Instructed reimbursement agent details  
+# + InstdRmbrsmntAgtAcct - Account details of the instructed reimbursement agent
 public type SettlementInstruction16 record {|
     BranchAndFinancialInstitutionIdentification8 InstgRmbrsmntAgt?;
     CashAccount40 InstgRmbrsmntAgtAcct?;

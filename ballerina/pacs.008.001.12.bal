@@ -14,8 +14,58 @@
 // specific language governing permissions and limitations
 // under the License.
 
+# Defines the structure for the Pacs008Document1.
 public type Pacs008Document1 Pacs008Document;
 
+# Defines the structure for CreditTransferTransaction64, which details a credit transfer transaction.
+#
+# + PmtId - Payment identification information
+# + PmtTpInf - Optional payment type information
+# + IntrBkSttlmAmt - Interbank settlement amount
+# + IntrBkSttlmDt - Optional interbank settlement date
+# + SttlmPrty - Optional settlement priority
+# + SttlmTmIndctn - Optional settlement time indication
+# + SttlmTmReq - Optional settlement time request
+# + AccptncDtTm - Optional acceptance date and time
+# + PoolgAdjstmntDt - Optional pooling adjustment date
+# + InstdAmt - Optional instructed amount
+# + XchgRate - Optional exchange rate
+# + ChrgBr - Charge bearer type
+# + ChrgsInf - Array of charges information
+# + MndtRltdInf - Optional credit transfer mandate-related information
+# + PrvsInstgAgt1 - Optional previous instructing agent information
+# + PrvsInstgAgt1Acct - Optional previous instructing agent account information
+# + PrvsInstgAgt2 - Optional previous instructing agent information
+# + PrvsInstgAgt2Acct - Optional previous instructing agent account information
+# + PrvsInstgAgt3 - Optional previous instructing agent information
+# + PrvsInstgAgt3Acct - Optional previous instructing agent account information
+# + InstgAgt - Instructing agent information
+# + InstdAgt - Instructed agent information
+# + IntrmyAgt1 - Optional intermediary agent information
+# + IntrmyAgt1Acct - Optional intermediary agent account information
+# + IntrmyAgt2 - Optional intermediary agent information
+# + IntrmyAgt2Acct - Optional intermediary agent account information
+# + IntrmyAgt3 - Optional intermediary agent information
+# + IntrmyAgt3Acct - Optional intermediary agent account information
+# + UltmtDbtr - Optional ultimate debtor identification
+# + InitgPty - Initiating party information
+# + Dbtr - Debtor identification
+# + DbtrAcct - Optional debtor account information
+# + DbtrAgt - Debtor agent information
+# + DbtrAgtAcct - Optional debtor agent account information
+# + CdtrAgt - Creditor agent information
+# + CdtrAgtAcct - Optional creditor agent account information
+# + Cdtr - Creditor identification
+# + CdtrAcct - Optional creditor account information
+# + UltmtCdtr - Optional ultimate creditor identification
+# + InstrForCdtrAgt - Array of instructions for the creditor agent
+# + InstrForNxtAgt - Array of instructions for the next agent
+# + Purp - Optional purpose information
+# + RgltryRptg - Optional regulatory reporting information
+# + Tax - Optional tax information
+# + RltdRmtInf - Array of related remittance information
+# + RmtInf - Optional remittance information
+# + SplmtryData - Optional supplementary data
 public type CreditTransferTransaction64 record {|
     PaymentIdentification13 PmtId;
     PaymentTypeInformation28 PmtTpInf?;
@@ -66,10 +116,18 @@ public type CreditTransferTransaction64 record {|
     SupplementaryData1[] SplmtryData?;
 |};
 
+# Defines the structure for Pacs008Document, which encapsulates the customer credit transfer transaction details.
+#
+# + FIToFICstmrCdtTrf - Customer credit transfer transaction information
 public type Pacs008Document record {|
     FIToFICustomerCreditTransferV12 FIToFICstmrCdtTrf;
 |};
 
+# Defines the structure for FIToFICustomerCreditTransferV12, which contains details about customer credit transfer transactions.
+#
+# + GrpHdr - Group header information for the credit transfer transaction
+# + CdtTrfTxInf - Array of credit transfer transaction information
+# + SplmtryData - Optional supplementary data
 public type FIToFICustomerCreditTransferV12 record {|
     GroupHeader113 GrpHdr;
     CreditTransferTransaction64[] CdtTrfTxInf;

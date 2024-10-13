@@ -14,8 +14,16 @@
 // specific language governing permissions and limitations
 // under the License.
 
+# Defines the structure for the Camt055Document1.
 public type Camt055Document1 Camt055Document;
 
+# Defines the structure for CustomerPaymentCancellationRequestV12, which contains the details of a customer payment cancellation request.
+#
+# + Assgnmt - Case assignment details
+# + Case - Optional case details
+# + CtrlData - Control data related to the cancellation request
+# + Undrlyg - Underlying transactions related to the cancellation
+# + SplmtryData - Optional supplementary data
 public type CustomerPaymentCancellationRequestV12 record {|
     CaseAssignment6 Assgnmt;
     Case6 Case?;
@@ -24,10 +32,24 @@ public type CustomerPaymentCancellationRequestV12 record {|
     SupplementaryData1[] SplmtryData?;
 |};
 
+# Defines the structure for Camt055Document, which contains the customer payment cancellation request details.
+#
+# + CstmrPmtCxlReq - The customer payment cancellation request
 public type Camt055Document record {|
     CustomerPaymentCancellationRequestV12 CstmrPmtCxlReq;
 |};
 
+# Defines the structure for OriginalPaymentInstruction49, which details the original payment instruction that is being cancelled.
+#
+# + PmtCxlId - Unique identifier for the payment cancellation
+# + Case - Optional case details
+# + OrgnlPmtInfId - Identifier for the original payment information
+# + OrgnlGrpInf - Original group information
+# + NbOfTxs - Number of transactions involved
+# + CtrlSum - Control sum of the payment instruction
+# + PmtInfCxl - Group cancellation indicator
+# + CxlRsnInf - Cancellation reasons
+# + TxInf - Payment transaction information
 public type OriginalPaymentInstruction49 record {|
     Max35Text PmtCxlId?;
     Case6 Case?;
@@ -40,6 +62,19 @@ public type OriginalPaymentInstruction49 record {|
     PaymentTransaction154[] TxInf?;
 |};
 
+# Defines the structure for PaymentTransaction154, which contains details of the payment transaction being cancelled.
+#
+# + CxlId - Cancellation identifier
+# + Case - Optional case details
+# + OrgnlInstrId - Original instruction identifier
+# + OrgnlEndToEndId - Original end-to-end identifier
+# + OrgnlUETR - Original unique end-to-end transaction reference
+# + OrgnlInstdAmt - Original instructed amount
+# + OrgnlReqdExctnDt - Original requested execution date
+# + OrgnlReqdColltnDt - Original required collection date
+# + CxlRsnInf - Cancellation reasons
+# + OrgnlTxRef - Original transaction reference
+# + SplmtryData - Optional supplementary data
 public type PaymentTransaction154 record {|
     Max35Text CxlId?;
     Case6 Case?;
@@ -54,6 +89,10 @@ public type PaymentTransaction154 record {|
     SupplementaryData1[] SplmtryData?;
 |};
 
+# Defines the structure for UnderlyingTransaction33, which includes original group information and original payment instructions related to the cancellation.
+#
+# + OrgnlGrpInfAndCxl - Original group information and cancellation details
+# + OrgnlPmtInfAndCxl - Original payment instructions and cancellations
 public type UnderlyingTransaction33 record {|
     OriginalGroupHeader21 OrgnlGrpInfAndCxl?;
     OriginalPaymentInstruction49[] OrgnlPmtInfAndCxl?;
