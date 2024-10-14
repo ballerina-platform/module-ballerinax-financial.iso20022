@@ -561,7 +561,12 @@ public type SupplementaryData1 record {|
 |};
 
 # Defines SupplementaryDataEnvelope1 as an empty record for supplementary data.
+# 
+# + Nrtv - Narrative content
+# + xmlContent - xml content 
 public type SupplementaryDataEnvelope1 record {
+    string Nrtv?;
+    string xmlContent?;
 };
 
 # Defines the structure for CreditorReferenceInformation3, representing creditor reference information.
