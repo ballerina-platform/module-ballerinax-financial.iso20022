@@ -30,6 +30,12 @@ The ISO 20022 library provides a comprehensive collection of ISO 20022 records, 
 - pain.001.001.12
 - pain.008.001.11
 
+## Available Submodules
+
+- financial.iso20022.cash_management
+- financial.iso20022.payment_initiation
+- financial.iso20022.payments_clearing_and_settlement
+
 ## Usage
 
 ### Step 1: Import the library
