@@ -4,9 +4,9 @@
 
 ISO 20022 is an international standard for financial messaging that allows the exchange of structured and detailed information across different financial services, such as payments and securities. It uses a data-rich XML format, enabling more comprehensive data sharing compared to older formats like SWIFT MT. ISO 20022 also promotes global interoperability, reducing complexity by harmonizing financial communication standards across borders and sectors. As the financial industry adopts this standard, it supports innovation and digital transformation in financial messaging.
 
-The ISO 20022 library provides a comprehensive collection of ISO 20022 records, organized into submodules for each message type category. This modular approach allows seamless integration with financial messaging systems, enabling users to create, manipulate, and parse ISO 20022-compliant messages specific to their needs. By offering a standardized solution for handling complex financial data, the library streamlines operations within Ballerina applications, making it easier to work with diverse ISO 20022 message categories.
+The `ballerinax/financial.iso20022.cash_managament`library provides a collection of ISO 20022 cash management records based on the corresponding XSDs, enabling seamless integration with financial messaging systems. The library is designed to facilitate the creation, manipulation, and parsing of ISO 20022-compliant messages, offering a standardized approach for handling complex financial data within Ballerina applications. 
 
-## Supported ISO 20022 Message Types
+## Supported Message Types
 
 - camt.026.001.10
 - camt.027.001.10
@@ -22,36 +22,41 @@ The ISO 20022 library provides a comprehensive collection of ISO 20022 records, 
 - camt.056.001.12
 - camt.057.001.08
 - camt.060.001.07
-- pacs.002.001.14
-- pacs.003.001.11
-- pacs.008.001.12
-- pacs.009.001.11
-- pacs.010.001.06
-- pain.001.001.12
-- pain.008.001.11
 
 ## Usage
 
 ### Step 1: Import the library
 
-Import the `ballerinax/financial.iso20022.payment_initiation` library.
+Import the `financial.iso20022.cash_managament` library.
 
 ```ballerina
-import ballerinax/financial.iso20022.payment_initiation as isorecord;
+import ballerinax/financial.iso20022.cash_managament as isorecord;
 ```
 
 ### Step 2: Create new ISO 20022 documents based on requirement
 
 ```ballerina
-isorecord:Pain001Document document = {
-    CstmrCdtTrfInitn: {
-        GrpHdr: {
+isorecord:Camt026Document document = {
+    UblToApply: {
+        Assgnmt: {
             CreDtTm: time:utcToString(time:utcNow()), 
-            InitgPty: {}, 
-            NbOfTxs: "1", 
-            MsgId: uuid:createType4AsString().substring(0, 11)
-        }, 
-        PmtInf: []
+            Assgne: {
+                Agt: {
+                    FinInstnId: {
+                        BICFI: "KREDBEBB"
+                    }
+                }
+            }, 
+            Id: "ASSNID-001", 
+            Assgnr: {
+                Agt: {
+                    FinInstnId: {
+                        BICFI: "RABOBE22"
+                    }
+                }
+            }}, 
+        Undrlyg: {}, 
+        Justfn: {}
     }
 };
 ```

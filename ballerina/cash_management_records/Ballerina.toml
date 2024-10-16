@@ -1,0 +1,13 @@
+[package]
+org = "ballerinax"
+name = "financial.iso20022.cash_management"
+version = "1.0.0"
+distribution = "2201.10.1"
+authors=["Ballerina"]
+export=["financial.iso20022.cash_management"]
+keywords=["Financial", "ISO20022", "Cash Management"]
+repository="https://github.com/ballerina-platform/module-ballerinax-financial.iso20022"
+license = ["Apache-2.0"]
+
+[build-options]
+observabilityIncluded = true

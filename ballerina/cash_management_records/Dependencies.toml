@@ -45,12 +45,12 @@ modules = [
 
 [[package]]
 org = "ballerinax"
-name = "financial.iso20022"
+name = "financial.iso20022.cash_management"
 version = "1.0.0"
 dependencies = [
 	{org = "ballerina", name = "data.xmldata"},
 	{org = "ballerinai", name = "observe"}
 ]
 modules = [
-	{org = "ballerinax", packageName = "financial.iso20022", moduleName = "financial.iso20022"}
+	{org = "ballerinax", packageName = "financial.iso20022.cash_management", moduleName = "financial.iso20022.cash_management"}
 ]
