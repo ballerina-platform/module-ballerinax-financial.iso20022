@@ -14,4 +14,3 @@ jobs:
     with:
       package-name: financial.iso20022
       package-org: ballerinax
-      
