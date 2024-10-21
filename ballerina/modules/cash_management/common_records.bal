@@ -568,7 +568,7 @@ public type SupplementaryData1 record {|
 public type SupplementaryDataEnvelope1 record {
     string Nrtv?;
     string XmlContent?;
-    string CpOfOrgnlMsg;
+    string CpOfOrgnlMsg?;
 };
 
 # Defines the structure for CreditorReferenceInformation3, representing creditor reference information.
