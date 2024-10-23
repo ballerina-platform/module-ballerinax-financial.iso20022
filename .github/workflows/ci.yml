@@ -12,63 +12,10 @@ env:
   BALLERINA_VERSION: 2201.10.1
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    outputs:
-      project-matrix: ${{ steps.unique-project-paths.outputs.BALLERINA_PROJECT_PATHS }}
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Extract Unique Ballerina Project Paths from Changed Files
-        id: unique-project-paths
-        run: |
-          # Get changed files of PR from github API
-          PR_DETAILS=$(curl -sSL \
-            "https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files")
-          CHANGED_FILES=$(echo "$PR_DETAILS" | jq -r '.[].filename')
-          echo "Changed Files: "
-          echo "${CHANGED_FILES}"
-
-          # Convert CHANGED_FILES to an array
-          readarray -t CHANGED_FILES_ARRAY <<<"${CHANGED_FILES}"
-          
-          # Remove duplicates from the CHANGED_FILES_ARRAY
-          declare -A UNIQUE_PATHS_MAP
-          for file in "${CHANGED_FILES_ARRAY[@]}"; do
-            if [[ $file == $FILE_PATTERN ]]; then
-              EXTRACTED_PATH=$(echo "$file" | cut -d '/' -f 1)
-            fi
-
-            if [[ $EXTRACTED_PATH && $EXTRACTED_PATH != $GITHUB_WORKFLOWS_DIR ]]; then
-              UNIQUE_PATHS_MAP[$EXTRACTED_PATH]=1
-            fi
-          done
-          
-          # Print the unique ballerina project paths
-          echo "Extracted Unique Ballerina Project Paths: "
-          for EXTRACTED_PATH in "${!UNIQUE_PATHS_MAP[@]}"; do
-            echo "$EXTRACTED_PATH"
-          done
-
-          # Create the JSON array with elements enclosed in double quotes
-          UNIQUE_PATHS_JSON=$(for key in "${!UNIQUE_PATHS_MAP[@]}"; do echo "\"$key\""; done | jq -s -c .)
-          echo "UNIQUE_PATHS_JSON: "
-          echo "${UNIQUE_PATHS_JSON}"
-          echo "BALLERINA_PROJECT_PATHS=${UNIQUE_PATHS_JSON}" >> $GITHUB_OUTPUT
-
   build:
-    needs: [ setup ]
     runs-on: ubuntu-latest
     env:
       JAVA_OPTS: -Xmx4G
-    if: ${{ needs.setup.outputs.project-matrix != '[]' }}
-    strategy:
-      matrix:
-        path: ${{ fromJson(needs.setup.outputs.project-matrix) }}
 
     steps:
       - name: Checkout code
@@ -81,19 +28,14 @@ jobs:
 
       - name: Ballerina Build
         run: |
-          pushd "${{ matrix.path }}"
+          pushd iso20022
           bal pack
           popd 
 
   test:
-    needs: [ setup ]
     runs-on: ubuntu-latest
     env:
       JAVA_OPTS: -Xmx4G
-    if: ${{ needs.setup.outputs.project-matrix != '[]' }}
-    strategy:
-      matrix:
-        path: ${{ fromJson(needs.setup.outputs.project-matrix) }}
 
     steps:
       - name: Checkout code
@@ -106,23 +48,13 @@ jobs:
 
       - name: Ballerina Test
         run: |
-          pushd "${{ matrix.path }}"
+          pushd iso20022
           bal test --code-coverage
           popd
 
       - name: Read Ballerina Test Results
         id: test_results
         run: |
-          if [ -f "./${{ matrix.path }}/target/report/test_results.json" ]; then
-            content=`cat ./${{ matrix.path }}/target/report/test_results.json`                
-            content="${content//'%'/'%25'}"
-            content="${content//$'\n'/'%0A'}"
-            content="${content//$'\r'/'%0D'}"
-
-            echo "Covered Code Lines : $(echo "$content" | jq -r '.coveredLines')"
-            echo "Total Code Lines : $(echo "$content" | jq -r '.missedLines') + $(echo "$content" | jq -r '.coveredLines')"
-            echo "Code Coverage Percentage : $(echo "$content" | jq -r '.coveragePercentage')"
-          else
-            # echo "TEST_RESULTS_JSON=" >> $GITHUB_OUTPUT
-            echo "No test results file found."
+          # echo "TEST_RESULTS_JSON=" >> $GITHUB_OUTPUT
+          echo "No test results file found."
           fi
