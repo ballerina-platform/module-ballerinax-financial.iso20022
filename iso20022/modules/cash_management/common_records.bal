@@ -563,10 +563,12 @@ public type SupplementaryData1 record {|
 # Defines SupplementaryDataEnvelope1 as an empty record for supplementary data.
 # 
 # + Nrtv - Narrative content
-# + xmlContent - xml content 
+# + XmlContent - Xml content 
+# + CpOfOrgnlMsg - Copy of original message
 public type SupplementaryDataEnvelope1 record {
     string Nrtv?;
-    string xmlContent?;
+    string XmlContent?;
+    json CpOfOrgnlMsg?;
 };
 
 # Defines the structure for CreditorReferenceInformation3, representing creditor reference information.
@@ -2965,6 +2967,30 @@ public type OriginalGroupInformation29 record {|
     ISODateTime OrgnlCreDtTm?;
 |};
 
+# Defines the structure for OriginalPaymentInstruction48, representing details of original payment instruction.
+#
+# + OrgnlPmtInfCxlId - Identifier for the original payment information cancellation.
+# + RslvdCase - Resolved case related to the payment instruction.
+# + OrgnlPmtInfId - Identifier for the original payment information.
+# + OrgnlGrpInf - Original group information related to this payment instruction.
+# + OrgnlNbOfTxs - Number of transactions in the original payment instruction.
+# + OrgnlCtrlSum - Control sum for the original payment instruction.
+# + PmtInfCxlSts - Cancellation status of the payment information.
+# + CxlStsRsnInf - Reasons for cancellation status.
+# + NbOfTxsPerCxlSts - Number of transactions per cancellation status.
+# + TxInfAndSts - Payment transaction information and status.
+public type OriginalPaymentInstruction48 record {|
+    Max35Text OrgnlPmtInfCxlId?;
+    Case6 RslvdCase?;
+    Max35Text OrgnlPmtInfId;
+    OriginalGroupInformation29 OrgnlGrpInf?;
+    Max15NumericText OrgnlNbOfTxs?;
+    DecimalNumber OrgnlCtrlSum?;
+    GroupCancellationStatus1Code PmtInfCxlSts?;
+    CancellationStatusReason5[] CxlStsRsnInf?;
+    NumberOfCancellationsPerStatus1[] NbOfTxsPerCxlSts?;
+    PaymentTransaction153[] TxInfAndSts?;
+|};
 
 # Defines the structure for MandateRelatedData3Choice, representing choices for mandate-related data.
 #
