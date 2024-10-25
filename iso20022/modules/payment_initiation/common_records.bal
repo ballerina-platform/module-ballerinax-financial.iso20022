@@ -526,7 +526,7 @@ public type PostalAddress27 record {|
     Max140Text DstrctNm?;
     Max35Text CtrySubDvsn?;
     CountryCode Ctry?;
-    Max70Text[7] AdrLine?;
+    Max70Text[] AdrLine?;
 |};
 
 public enum PreferredContactMethod2Code {
@@ -1553,7 +1553,7 @@ public type EntryTransaction14 record {|
     LocalInstrument2Choice LclInstrm?;
     PaymentTypeInformation27 PmtTpInf?;
     Purpose2Choice Purp?;
-    RemittanceLocation8[10] RltdRmtInf?;
+    RemittanceLocation8[] RltdRmtInf?;
     RemittanceInformation22 RmtInf?;
     TransactionDates3 RltdDts?;
     TransactionPrice4Choice RltdPric?;
