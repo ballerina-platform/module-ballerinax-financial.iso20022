@@ -57,4 +57,3 @@ modules = [
 	{org = "ballerinax", packageName = "financial.iso20022", moduleName = "financial.iso20022.payment_initiation"},
 	{org = "ballerinax", packageName = "financial.iso20022", moduleName = "financial.iso20022.payments_clearing_and_settlement"}
 ]
-
