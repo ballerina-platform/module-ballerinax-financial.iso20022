@@ -63,9 +63,9 @@ public type DirectDebitTransactionInformation32 record {|
     PartyIdentification272 UltmtDbtr?;
     Max140Text InstrForCdtrAgt?;
     Purpose2Choice Purp?;
-    RegulatoryReporting3[10] RgltryRptg?;
+    RegulatoryReporting3[] RgltryRptg?;
     TaxData1 Tax?;
-    RemittanceLocation8[10] RltdRmtInf?;
+    RemittanceLocation8[] RltdRmtInf?;
     RemittanceInformation22 RmtInf?;
     SupplementaryData1[] SplmtryData?;
 |};
@@ -95,7 +95,7 @@ public type Pain008Document record {|
 public type GroupHeader118 record {|
     Max35Text MsgId;
     ISODateTime CreDtTm;
-    Authorisation1Choice[2] Authstn?;
+    Authorisation1Choice[] Authstn?;
     Max15NumericText NbOfTxs;
     DecimalNumber CtrlSum?;
     PartyIdentification272 InitgPty;

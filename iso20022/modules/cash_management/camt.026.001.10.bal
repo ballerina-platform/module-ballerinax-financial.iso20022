@@ -65,8 +65,8 @@ public type MissingData1Choice record {|
 # + IncrrctInf - The incorrect information details
 public type MissingOrIncorrectData1 record {|
     AMLIndicator AMLReq?;
-    UnableToApplyMissing2[10] MssngInf?;
-    UnableToApplyIncorrect2[10] IncrrctInf?;
+    UnableToApplyMissing2[] MssngInf?;
+    UnableToApplyIncorrect2[] IncrrctInf?;
 |};
 
 # Defines the UnableToApplyIncorrect2 structure.

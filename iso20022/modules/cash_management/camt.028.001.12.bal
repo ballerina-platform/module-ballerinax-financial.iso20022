@@ -125,6 +125,6 @@ public type PaymentComplementaryInformation11 record {|
     CashAccount40 PrvsInstgAgt3Acct?;
     InstructionForNextAgent1[] InstrForNxtAgt?;
     InstructionForCreditorAgent3[] InstrForCdtrAgt?;
-    RemittanceLocation8[10] RltdRmtInf?;
+    RemittanceLocation8[] RltdRmtInf?;
     RemittanceInformation22 RmtInf?;
 |};

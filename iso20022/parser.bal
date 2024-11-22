@@ -9,7 +9,7 @@ import ballerina/data.xmldata;
 # + xmlContent - The XML content to be parsed into the specified record type.
 # + recordType - A `typedesc` representing the Ballerina record type into which the XML will be parsed.
 # + return - The parsed Ballerina record if successful, or an error if the parsing fails.
-public isolated function parseIso20022(xml xmlContent, typedesc<record {}> recordType) returns record {}|error {
+public isolated function fromIso20022(xml xmlContent, typedesc<record {}> recordType) returns record {}|error {
     return xmldata:parseAsType(xmlContent, t = recordType);
 }
 
