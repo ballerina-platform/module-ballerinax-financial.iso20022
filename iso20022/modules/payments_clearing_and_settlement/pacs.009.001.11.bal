@@ -13,6 +13,7 @@
 // KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations
 // under the License.
+import ballerina/data.xmldata;
 
 # Defines the structure for the Pacs009Document1.
 public type Pac009Document1 Pacs009Document;
@@ -162,6 +163,12 @@ public type CreditTransferTransaction63 record {|
 # Defines the structure for Pacs009Document, which encapsulates the financial institution credit transfer transaction information.
 #
 # + FICdtTrf - Financial institution credit transfer transaction information
+@xmldata:Name {
+    value: "Document"
+}
+@xmldata:Namespace {
+    uri: "urn:iso:std:iso:20022:tech:xsd:pacs.009.001.11"
+}
 public type Pacs009Document record {|
     FinancialInstitutionCreditTransferV11 FICdtTrf;
 |};

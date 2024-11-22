@@ -13,6 +13,7 @@
 // KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations
 // under the License.
+import ballerina/data.xmldata;
 
 # Defines the structure for the Camt050Document1.
 public type Camt050Document1 Camt050Document;
@@ -29,6 +30,12 @@ public type Amount2Choice record {|
 # Defines the structure for the Camt050Document, which contains liquidity credit transfer details.
 #
 # + LqdtyCdtTrf - The liquidity credit transfer message details
+@xmldata:Name {
+    value: "Document"
+}
+@xmldata:Namespace {
+    uri: "urn:iso:std:iso:20022:tech:xsd:camt.050.001.07"
+}
 public type Camt050Document record {|
     LiquidityCreditTransferV07 LqdtyCdtTrf;
 |};

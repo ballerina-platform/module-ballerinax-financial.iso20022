@@ -13,6 +13,7 @@
 // KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations
 // under the License.
+import ballerina/data.xmldata;
 
 # Defines the Camt026Document1 structure.
 public type Camt026Document1 Camt026Document;
@@ -23,6 +24,12 @@ public type AMLIndicator boolean;
 # Defines the Camt026Document structure.
 #
 # + UblToApply - The unable to apply information
+@xmldata:Name {
+    value: "Document"
+}
+@xmldata:Namespace {
+    uri: "urn:iso:std:iso:20022:tech:xsd:camt.026.001.10"
+}
 public type Camt026Document record {|
     UnableToApplyV10 UblToApply;
 |};

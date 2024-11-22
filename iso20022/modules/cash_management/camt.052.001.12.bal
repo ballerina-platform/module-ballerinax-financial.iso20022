@@ -13,6 +13,7 @@
 // KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations
 // under the License.
+import ballerina/data.xmldata;
 
 # Defines the structure for the Camt052Document1.
 public type Camt052Document1 Camt052Document;
@@ -68,6 +69,12 @@ public type BankToCustomerAccountReportV12 record {|
 # Defines the structure for the Camt052Document, which contains the bank-to-customer account report details.
 #
 # + BkToCstmrAcctRpt - The bank-to-customer account report
+@xmldata:Name {
+    value: "Document"
+}
+@xmldata:Namespace {
+    uri: "urn:iso:std:iso:20022:tech:xsd:camt.052.001.12"
+}
 public type Camt052Document record {|
     BankToCustomerAccountReportV12 BkToCstmrAcctRpt;
 |};

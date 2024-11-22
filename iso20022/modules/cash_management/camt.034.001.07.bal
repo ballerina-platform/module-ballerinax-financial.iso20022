@@ -13,6 +13,7 @@
 // KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations
 // under the License.
+import ballerina/data.xmldata;
 
 # Defines the structure for the Camt034Document1.
 public type Camt034Document1 Camt034Document;
@@ -20,6 +21,12 @@ public type Camt034Document1 Camt034Document;
 # Defines the structure for Camt034Document, a record that holds the duplicate message details.
 #
 # + Dplct - The duplicate message content with its case and proprietary data
+@xmldata:Name {
+    value: "Document"
+}
+@xmldata:Namespace {
+    uri: "urn:iso:std:iso:20022:tech:xsd:camt.034.001.07"
+}
 public type Camt034Document record {|
     DuplicateV07 Dplct;
 |};

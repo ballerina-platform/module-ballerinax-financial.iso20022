@@ -13,6 +13,7 @@
 // KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations
 // under the License.
+import ballerina/data.xmldata;
 
 # Defines the Camt029Document1 structure.
 public type Camt029Document1 Camt029Document;
@@ -170,6 +171,12 @@ public type CorrectiveTransaction5Choice record {|
 # Defines the Camt029Document structure.
 #
 # + RsltnOfInvstgtn - The resolution of the investigation details
+@xmldata:Name {
+    value: "Document"
+}
+@xmldata:Namespace {
+    uri: "urn:iso:std:iso:20022:tech:xsd:camt.029.001.13"
+}
 public type Camt029Document record {|
     ResolutionOfInvestigationV13 RsltnOfInvstgtn;
 |};

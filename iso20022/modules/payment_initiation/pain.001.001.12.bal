@@ -13,6 +13,7 @@
 // KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations
 // under the License.
+import ballerina/data.xmldata;
 
 # Defines the structure for the Pain001Document1.
 public type Pain001Document1 Pain001Document;
@@ -134,6 +135,12 @@ public type CustomerCreditTransferInitiationV12 record {|
 # Defines the structure for Pain001Document, which encapsulates the customer credit transfer initiation information.
 #
 # + CstmrCdtTrfInitn - Customer credit transfer initiation information
+@xmldata:Name {
+    value: "Document"
+}
+@xmldata:Namespace {
+    uri: "urn:iso:std:iso:20022:tech:xsd:pain.001.001.12"
+}
 public type Pain001Document record {|
     CustomerCreditTransferInitiationV12 CstmrCdtTrfInitn;
 |};

@@ -13,6 +13,7 @@
 // KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations
 // under the License.
+import ballerina/data.xmldata;
 
 # Defines the structure for the Pacs003Document1.
 public type Pac003Document1 Pacs003Document;
@@ -97,6 +98,12 @@ public type DirectDebitTransactionInformation31 record {|
 # Defines the structure for Pacs003Document, which encapsulates the customer direct debit transaction details.
 #
 # + FIToFICstmrDrctDbt - Customer direct debit transaction information
+@xmldata:Name {
+    value: "Document"
+}
+@xmldata:Namespace {
+    uri: "urn:iso:std:iso:20022:tech:xsd:pacs.003.001.11"
+}
 public type Pacs003Document record {|
     FIToFICustomerDirectDebitV11 FIToFICstmrDrctDbt;
 |};
