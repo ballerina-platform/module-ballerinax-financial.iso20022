@@ -561,7 +561,7 @@ public type SupplementaryData1 record {|
 |};
 
 # Defines SupplementaryDataEnvelope1 as an empty record for supplementary data.
-# 
+#
 # + Nrtv - Narrative content
 # + XmlContent - Xml content 
 # + CpOfOrgnlMsg - Copy of original message
@@ -1040,7 +1040,7 @@ public type AccountInterest4 record {|
 |};
 
 # Defines the structure for ActiveCurrencyAndAmount_SimpleType, representing an amount in a specific currency.
-# 
+#
 # + ActiveCurrencyAndAmount_SimpleType - The amount in a specified currency.
 # + Ccy - The currency code as an XML attribute.
 public type ActiveCurrencyAndAmount_SimpleType record {|
@@ -1132,7 +1132,7 @@ public type AmountAndDirection35 record {|
 |};
 
 # Defines the structure for AmountRangeBoundary1, representing a boundary for an amount range.
-# 
+#
 # + BdryAmt - The boundary amount.
 # + Incl - Indicates if the boundary is inclusive.
 public type AmountRangeBoundary1 record {|
@@ -1382,7 +1382,7 @@ public enum ChargeBearerType1Code {
     DEBT, CRED, SHAR, SLEV
 };
 
-#Defines the charge included indicator as a boolean.
+# Defines the charge included indicator as a boolean.
 public type ChargeIncludedIndicator boolean;
 
 # Defines the structure for ChargeType3Choice, providing a choice between external code or proprietary charge type.
@@ -1471,8 +1471,8 @@ public type DateAndDateTime2Choice record {|
 
 # Defines the structure for DateOrDateTimePeriod1Choice, offering a choice between a date period or a date-time period.
 #
-# + Dt    - Date period.
-# + DtTm  - Date-time period.
+# + Dt - Date period.
+# + DtTm - Date-time period.
 public type DateOrDateTimePeriod1Choice record {|
     DatePeriod2 Dt?;
     DateTimePeriod1 DtTm?;
@@ -1492,9 +1492,9 @@ public type DecimalNumber decimal;
 
 # Defines the structure for DisplayCapabilities1, specifying user interface display capabilities.
 #
-# + DispTp     - Type of user interface.
-# + NbOfLines  - Number of display lines.
-# + LineWidth  - Width of the display lines.
+# + DispTp - Type of user interface.
+# + NbOfLines - Number of display lines.
+# + LineWidth - Width of the display lines.
 public type DisplayCapabilities1 record {|
     UserInterface2Code DispTp;
     Max3NumericText NbOfLines;
@@ -1503,7 +1503,7 @@ public type DisplayCapabilities1 record {|
 
 # Defines the structure for EntryDetails13, containing details of batch and transaction information.
 #
-# + Btch   - Batch information.
+# + Btch - Batch information.
 # + TxDtls - List of transaction details.
 public type EntryDetails13 record {|
     BatchInformation2 Btch?;
@@ -1512,33 +1512,33 @@ public type EntryDetails13 record {|
 
 # Defines the structure for EntryTransaction14, representing details of a single entry transaction.
 #
-# + Refs       - Transaction references.
-# + Amt        - Transaction amount.
-# + CdtDbtInd  - Credit or debit indicator.
-# + AmtDtls    - Details of the amount and currency exchange.
-# + Avlbty     - Availability of cash.
-# + BkTxCd     - Bank transaction code structure.
-# + Chrgs      - Charges associated with the transaction.
-# + Intrst     - Interest information.
-# + RltdPties  - Related transaction parties.
-# + RltdAgts   - Related transaction agents.
-# + LclInstrm  - Local instrument choice.
-# + PmtTpInf   - Payment type information.
-# + Purp       - Purpose of the transaction.
+# + Refs - Transaction references.
+# + Amt - Transaction amount.
+# + CdtDbtInd - Credit or debit indicator.
+# + AmtDtls - Details of the amount and currency exchange.
+# + Avlbty - Availability of cash.
+# + BkTxCd - Bank transaction code structure.
+# + Chrgs - Charges associated with the transaction.
+# + Intrst - Interest information.
+# + RltdPties - Related transaction parties.
+# + RltdAgts - Related transaction agents.
+# + LclInstrm - Local instrument choice.
+# + PmtTpInf - Payment type information.
+# + Purp - Purpose of the transaction.
 # + RltdRmtInf - Related remittance information (up to 10 instances).
-# + RmtInf     - Remittance information.
-# + RltdDts    - Related transaction dates.
-# + RltdPric   - Related transaction price.
-# + RltdQties  - Related transaction quantities.
-# + FinInstrmId- Financial instrument identification.
-# + Tax        - Tax data.
-# + RtrInf     - Payment return reason information.
-# + CorpActn   - Corporate action details.
-# + SfkpgAcct  - Securities safekeeping account.
-# + CshDpst    - Cash deposit information.
-# + CardTx     - Card transaction information.
+# + RmtInf - Remittance information.
+# + RltdDts - Related transaction dates.
+# + RltdPric - Related transaction price.
+# + RltdQties - Related transaction quantities.
+# + FinInstrmId - Financial instrument identification.
+# + Tax - Tax data.
+# + RtrInf - Payment return reason information.
+# + CorpActn - Corporate action details.
+# + SfkpgAcct - Securities safekeeping account.
+# + CshDpst - Cash deposit information.
+# + CardTx - Card transaction information.
 # + AddtlTxInf - Additional transaction information.
-# + SplmtryData- Supplementary data.
+# + SplmtryData - Supplementary data.
 public type EntryTransaction14 record {|
     TransactionReferences6 Refs?;
     ActiveOrHistoricCurrencyAndAmount Amt?;
@@ -1617,7 +1617,7 @@ public type ExternalTechnicalInputChannel1Code string;
 # Defines the structure for FinancialInstrumentQuantity1Choice, offering a choice between different quantity types for a financial instrument.
 #
 # + Unit - Unit quantity.
-# + FaceAmt  - Face amount.
+# + FaceAmt - Face amount.
 # + AmtsdVal - Amortized value.
 public type FinancialInstrumentQuantity1Choice record {|
     DecimalNumber Unit?;
@@ -1636,9 +1636,9 @@ public type FromToAmountRange1 record {|
 
 # Defines the structure for GenericIdentification1, representing a generic identifier with an optional scheme name and issuer.
 #
-# + Id      - Identifier.
+# + Id - Identifier.
 # + SchmeNm - Scheme name.
-# + Issr    - Issuer.
+# + Issr - Issuer.
 public type GenericIdentification1 record {|
     Max35Text Id?;
     Max35Text SchmeNm?;
@@ -1647,7 +1647,7 @@ public type GenericIdentification1 record {|
 
 # Defines the structure for GenericIdentification3, representing a generic identifier with an issuer.
 #
-# + Id   - Identifier.
+# + Id - Identifier.
 # + Issr - Issuer.
 public type GenericIdentification3 record {|
     Max35Text Id?;
@@ -1656,9 +1656,9 @@ public type GenericIdentification3 record {|
 
 # Defines the structure for GenericIdentification32, representing a generic identifier with a party type, issuer, and short name.
 #
-# + Id     - Identifier.
-# + Tp     - Party type.
-# + Issr   - Issuer.
+# + Id - Identifier.
+# + Tp - Party type.
+# + Issr - Issuer.
 # + ShrtNm - Short name.
 public type GenericIdentification32 record {|
     Max35Text Id;
@@ -1669,12 +1669,12 @@ public type GenericIdentification32 record {|
 
 # Defines the structure for GroupHeader116, representing the header of a message with creation date-time, message recipient, and other optional elements.
 #
-# + MsgId        - Message identifier.
-# + CreDtTm      - Creation date-time.
-# + MsgRcpt      - Message recipient.
-# + MsgPgntn     - Message pagination details.
-# + OrgnlBizQry  - Original business query details.
-# + AddtlInf     - Additional information.
+# + MsgId - Message identifier.
+# + CreDtTm - Creation date-time.
+# + MsgRcpt - Message recipient.
+# + MsgPgntn - Message pagination details.
+# + OrgnlBizQry - Original business query details.
+# + AddtlInf - Additional information.
 public type GroupHeader116 record {|
     Max35Text MsgId;
     ISODateTime CreDtTm;
@@ -1695,7 +1695,7 @@ public type ISOYearMonth string;
 
 # Defines the structure for IdentificationSource3Choice, offering a choice between an external code or a proprietary identifier.
 #
-# + Cd    - External code.
+# + Cd - External code.
 # + Prtry - Proprietary identifier.
 public type IdentificationSource3Choice record {|
     ExternalFinancialInstrumentIdentificationType1Code Cd?;
@@ -1704,11 +1704,11 @@ public type IdentificationSource3Choice record {|
 
 # Defines the structure for ImpliedCurrencyAmountRange1Choice, offering a choice between different amount range types.
 #
-# + FrAmt   - From amount boundary.
-# + ToAmt   - To amount boundary.
+# + FrAmt - From amount boundary.
+# + ToAmt - To amount boundary.
 # + FrToAmt - From-to amount range.
-# + EQAmt   - Equal amount.
-# + NEQAmt  - Not equal amount.
+# + EQAmt - Equal amount.
+# + NEQAmt - Not equal amount.
 public type ImpliedCurrencyAmountRange1Choice record {|
     AmountRangeBoundary1 FrAmt?;
     AmountRangeBoundary1 ToAmt?;
@@ -1722,13 +1722,13 @@ public type ImpliedCurrencyAndAmount decimal;
 
 # Defines the structure for InterestRecord2, representing interest details including amount, type, and tax charges.
 #
-# + Amt     - Interest amount.
-# + CdtDbtInd- Credit or debit indicator.
-# + Tp      - Type of interest.
-# + Rate    - Interest rate.
-# + FrToDt  - From-to date-time range for interest.
-# + Rsn     - Reason for interest.
-# + Tax     - Tax charges associated with the interest.
+# + Amt - Interest amount.
+# + CdtDbtInd - Credit or debit indicator.
+# + Tp - Type of interest.
+# + Rate - Interest rate.
+# + FrToDt - From-to date-time range for interest.
+# + Rsn - Reason for interest.
+# + Tax - Tax charges associated with the interest.
 public type InterestRecord2 record {|
     ActiveOrHistoricCurrencyAndAmount Amt;
     CreditDebitCode CdtDbtInd;
@@ -1741,7 +1741,7 @@ public type InterestRecord2 record {|
 
 # Defines the structure for InterestType1Choice, offering a choice between an interest type code and a proprietary identifier.
 #
-# + Cd    - Interest type code.
+# + Cd - Interest type code.
 # + Prtry - Proprietary interest type.
 public type InterestType1Choice record {|
     InterestType1Code Cd?;
@@ -1754,7 +1754,7 @@ public enum InterestType1Code {
 
 # Defines the structure for LocalInstrument2Choice, offering a choice between an external local instrument code and a proprietary identifier.
 #
-# + Cd    - External local instrument code.
+# + Cd - External local instrument code.
 # + Prtry - Proprietary local instrument identifier.
 public type LocalInstrument2Choice record {|
     ExternalLocalInstrument1Code Cd?;
@@ -1785,7 +1785,7 @@ public type Max5NumericText string;
 # Defines the structure for MessageIdentification2, containing identifiers for a message name and message.
 #
 # + MsgNmId - Message name identifier.
-# + MsgId   - Message identifier.
+# + MsgId - Message identifier.
 public type MessageIdentification2 record {|
     Max35Text MsgNmId?;
     Max35Text MsgId?;
@@ -1806,7 +1806,7 @@ public type NonNegativeDecimalNumber decimal;
 # Defines the structure for NumberAndSumOfTransactions1, containing the number of entries and their sum.
 #
 # + NbOfNtries - Number of entries.
-# + Sum        - Sum of the entries.
+# + Sum - Sum of the entries.
 public type NumberAndSumOfTransactions1 record {|
     Max15NumericText NbOfNtries?;
     DecimalNumber Sum?;
@@ -1814,9 +1814,9 @@ public type NumberAndSumOfTransactions1 record {|
 
 # Defines the structure for NumberAndSumOfTransactions4, containing the number of entries, their sum, and the total net entry.
 #
-# + NbOfNtries  - Number of entries.
-# + Sum         - Sum of the entries.
-# + TtlNetNtry  - Total net entry amount and direction.
+# + NbOfNtries - Number of entries.
+# + Sum - Sum of the entries.
+# + TtlNetNtry - Total net entry amount and direction.
 public type NumberAndSumOfTransactions4 record {|
     Max15NumericText NbOfNtries?;
     DecimalNumber Sum?;
@@ -1829,7 +1829,7 @@ public enum OnLineCapability1Code {
 
 # Defines the structure for OriginalAndCurrentQuantities1, representing the original and current quantities of a financial instrument.
 #
-# + FaceAmt  - Original face amount.
+# + FaceAmt - Original face amount.
 # + AmtsdVal - Current amortized value.
 public type OriginalAndCurrentQuantities1 record {|
     ImpliedCurrencyAndAmount FaceAmt;
@@ -1838,9 +1838,9 @@ public type OriginalAndCurrentQuantities1 record {|
 
 # Defines the structure for OriginalBusinessQuery1, containing information about the original business query.
 #
-# + MsgId    - Message identifier.
-# + MsgNmId  - Message name identifier.
-# + CreDtTm  - Creation date-time.
+# + MsgId - Message identifier.
+# + MsgNmId - Message name identifier.
+# + CreDtTm - Creation date-time.
 public type OriginalBusinessQuery1 record {|
     Max35Text MsgId;
     Max35Text MsgNmId?;
@@ -1849,9 +1849,9 @@ public type OriginalBusinessQuery1 record {|
 
 # Defines the structure for OtherIdentification1, representing other identification information including an optional suffix and identification source.
 #
-# + Id   - Identifier.
-# + Sfx  - Suffix.
-# + Tp   - Identification source.
+# + Id - Identifier.
+# + Sfx - Suffix.
+# + Tp - Identification source.
 public type OtherIdentification1 record {|
     Max35Text Id;
     Max16Text Sfx?;
@@ -1864,7 +1864,7 @@ public enum POIComponentType1Code {
 
 # Defines the structure for Pagination1, representing pagination information for a message.
 #
-# + PgNb      - Page number.
+# + PgNb - Page number.
 # + LastPgInd - Indicator of whether this is the last page.
 public type Pagination1 record {|
     Max5NumericText PgNb;
@@ -1881,10 +1881,10 @@ public enum PartyType4Code {
 
 # Defines the structure for PaymentCard4, representing details of a payment card.
 #
-# + PlainCardData   - Plain card data.
-# + CardCtryCd      - Card country code.
-# + CardBrnd        - Card brand.
-# + AddtlCardData   - Additional card data.
+# + PlainCardData - Plain card data.
+# + CardCtryCd - Card country code.
+# + CardBrnd - Card brand.
+# + AddtlCardData - Additional card data.
 public type PaymentCard4 record {|
     PlainCardData1 PlainCardData?;
     Exact3NumericText CardCtryCd?;
@@ -1894,17 +1894,17 @@ public type PaymentCard4 record {|
 
 # Defines the structure for PaymentContext3, representing the context of a payment transaction, including details about the presence of the cardholder, attendance, and authentication.
 #
-# + CardPres         - Indicates if the card was present.
-# + CrdhldrPres      - Indicates if the cardholder was present.
-# + OnLineCntxt      - Indicates if the transaction was online.
-# + AttndncCntxt     - Attendance context.
-# + TxEnvt           - Transaction environment.
-# + TxChanl          - Transaction channel.
-# + AttndntMsgCpbl   - Indicates if the attendant can send messages.
-# + AttndntLang      - Attendant language.
-# + CardDataNtryMd   - Card data entry mode.
-# + FllbckInd        - Indicates if fallback mode was used.
-# + AuthntcnMtd      - Authentication method.
+# + CardPres - Indicates if the card was present.
+# + CrdhldrPres - Indicates if the cardholder was present.
+# + OnLineCntxt - Indicates if the transaction was online.
+# + AttndncCntxt - Attendance context.
+# + TxEnvt - Transaction environment.
+# + TxChanl - Transaction channel.
+# + AttndntMsgCpbl - Indicates if the attendant can send messages.
+# + AttndntLang - Attendant language.
+# + CardDataNtryMd - Card data entry mode.
+# + FllbckInd - Indicates if fallback mode was used.
+# + AuthntcnMtd - Authentication method.
 public type PaymentContext3 record {|
     TrueFalseIndicator CardPres?;
     TrueFalseIndicator CrdhldrPres?;
@@ -1922,9 +1922,9 @@ public type PaymentContext3 record {|
 # Defines the structure for PaymentReturnReason8, representing the reason for a returned payment.
 #
 # + OrgnlBkTxCd - Original bank transaction code.
-# + Orgtr       - Originator.
-# + Rsn         - Return reason.
-# + AddtlInf    - Additional information about the return.
+# + Orgtr - Originator.
+# + Rsn - Return reason.
+# + AddtlInf - Additional information about the return.
 public type PaymentReturnReason8 record {|
     BankTransactionCodeStructure4 OrgnlBkTxCd?;
     PartyIdentification272 Orgtr?;
@@ -1935,11 +1935,11 @@ public type PaymentReturnReason8 record {|
 # Defines the structure for PaymentTypeInformation27, representing payment type information including priority, clearing channel, service level, and category purpose.
 #
 # + InstrPrty - Instruction priority.
-# + ClrChanl  - Clearing channel.
-# + SvcLvl    - Service level.
+# + ClrChanl - Clearing channel.
+# + SvcLvl - Service level.
 # + LclInstrm - Local instrument.
-# + SeqTp     - Sequence type.
-# + CtgyPurp  - Category purpose.
+# + SeqTp - Sequence type.
+# + CtgyPurp - Category purpose.
 public type PaymentTypeInformation27 record {|
     Priority2Code InstrPrty?;
     ClearingChannel2Code ClrChanl?;
@@ -1951,13 +1951,13 @@ public type PaymentTypeInformation27 record {|
 
 # Defines the structure for PlainCardData1, representing the basic details of a payment card.
 #
-# + PAN       - Primary account number.
+# + PAN - Primary account number.
 # + CardSeqNb - Card sequence number.
-# + FctvDt    - Effective date.
-# + XpryDt    - Expiry date.
-# + SvcCd     - Service code.
-# + TrckData  - Track data.
-# + CardSctyCd- Card security code.
+# + FctvDt - Effective date.
+# + XpryDt - Expiry date.
+# + SvcCd - Service code.
+# + TrckData - Track data.
+# + CardSctyCd - Card security code.
 public type PlainCardData1 record {|
     Min8Max28NumericText PAN;
     Min2Max3NumericText CardSeqNb?;
@@ -1970,11 +1970,11 @@ public type PlainCardData1 record {|
 
 # Defines the structure for PointOfInteraction1, representing a point of interaction device.
 #
-# + Id       - POI identification.
-# + SysNm    - System name.
-# + GrpId    - Group identifier.
+# + Id - POI identification.
+# + SysNm - System name.
+# + GrpId - Group identifier.
 # + Cpblties - POI capabilities.
-# + Cmpnt    - POI components.
+# + Cmpnt - POI components.
 public type PointOfInteraction1 record {|
     GenericIdentification32 Id;
     Max70Text SysNm?;
@@ -1985,11 +1985,11 @@ public type PointOfInteraction1 record {|
 
 # Defines the structure for PointOfInteractionCapabilities1, representing the capabilities of a point of interaction device.
 #
-# + CardRdngCpblties      - Card reading capabilities.
+# + CardRdngCpblties - Card reading capabilities.
 # + CrdhldrVrfctnCpblties - Cardholder verification capabilities.
-# + OnLineCpblties        - Online capabilities.
-# + DispCpblties          - Display capabilities.
-# + PrtLineWidth          - Printer line width.
+# + OnLineCpblties - Online capabilities.
+# + DispCpblties - Display capabilities.
+# + PrtLineWidth - Printer line width.
 public type PointOfInteractionCapabilities1 record {|
     CardDataReading1Code[] CardRdngCpblties?;
     CardholderVerificationCapability1Code[] CrdhldrVrfctnCpblties?;
@@ -2001,11 +2001,11 @@ public type PointOfInteractionCapabilities1 record {|
 # Defines the structure for PointOfInteractionComponent1, representing a component of a point of interaction device.
 #
 # + POICmpntTp - Component type.
-# + ManfctrId  - Manufacturer identifier.
-# + Mdl        - Model.
-# + VrsnNb     - Version number.
-# + SrlNb      - Serial number.
-# + ApprvlNb   - Approval numbers.
+# + ManfctrId - Manufacturer identifier.
+# + Mdl - Model.
+# + VrsnNb - Version number.
+# + SrlNb - Serial number.
+# + ApprvlNb - Approval numbers.
 public type PointOfInteractionComponent1 record {|
     POIComponentType1Code POICmpntTp;
     Max35Text ManfctrId?;
@@ -2020,7 +2020,7 @@ public type PositiveNumber decimal;
 
 # Defines the structure for Price7, representing a price in a financial transaction.
 #
-# + Tp  - Type of price (yielded or value type).
+# + Tp - Type of price (yielded or value type).
 # + Val - Price value (rate or amount).
 public type Price7 record {|
     YieldedOrValueType1Choice Tp;
@@ -2030,7 +2030,7 @@ public type Price7 record {|
 # Defines the structure for PriceRateOrAmount3Choice, offering a choice between a percentage rate and a currency amount.
 #
 # + Rate - Percentage rate.
-# + Amt  - Currency amount.
+# + Amt - Currency amount.
 public type PriceRateOrAmount3Choice record {|
     PercentageRate Rate?;
     ActiveOrHistoricCurrencyAnd13DecimalAmount Amt?;
@@ -2046,12 +2046,12 @@ public enum Priority2Code {
 
 # Defines the structure for Product2, representing a product including its code, unit of measure, and price.
 #
-# + PdctCd       - Product code.
-# + UnitOfMeasr  - Unit of measure.
-# + PdctQty      - Product quantity.
-# + UnitPric     - Unit price.
-# + PdctAmt      - Total product amount.
-# + TaxTp        - Tax type.
+# + PdctCd - Product code.
+# + UnitOfMeasr - Unit of measure.
+# + PdctQty - Product quantity.
+# + UnitPric - Unit price.
+# + PdctAmt - Total product amount.
+# + TaxTp - Tax type.
 # + AddtlPdctInf - Additional product information.
 public type Product2 record {|
     Max70Text PdctCd;
@@ -2065,7 +2065,7 @@ public type Product2 record {|
 
 # Defines the structure for ProprietaryAgent5, representing a proprietary agent and its type.
 #
-# + Tp  - Type of agent.
+# + Tp - Type of agent.
 # + Agt - Branch and financial institution identification of the agent.
 public type ProprietaryAgent5 record {|
     Max35Text Tp;
@@ -2074,8 +2074,8 @@ public type ProprietaryAgent5 record {|
 
 # Defines the structure for ProprietaryBankTransactionCodeStructure1, representing a proprietary bank transaction code.
 #
-# + Cd    - Transaction code.
-# + Issr  - Code issuer.
+# + Cd - Transaction code.
+# + Issr - Code issuer.
 public type ProprietaryBankTransactionCodeStructure1 record {|
     Max35Text Cd;
     Max35Text Issr?;
@@ -2083,8 +2083,8 @@ public type ProprietaryBankTransactionCodeStructure1 record {|
 
 # Defines the structure for ProprietaryDate3, representing a proprietary date.
 #
-# + Tp  - Date type.
-# + Dt  - Date value.
+# + Tp - Date type.
+# + Dt - Date value.
 public type ProprietaryDate3 record {|
     Max35Text Tp;
     DateAndDateTime2Choice Dt;
@@ -2092,7 +2092,7 @@ public type ProprietaryDate3 record {|
 
 # Defines the structure for ProprietaryParty6, representing a proprietary party including its type and party details.
 #
-# + Tp  - Party type.
+# + Tp - Party type.
 # + Pty - Party details.
 public type ProprietaryParty6 record {|
     Max35Text Tp;
@@ -2101,7 +2101,7 @@ public type ProprietaryParty6 record {|
 
 # Defines the structure for ProprietaryPrice2, representing a proprietary price.
 #
-# + Tp   - Price type.
+# + Tp - Price type.
 # + Pric - Price amount.
 public type ProprietaryPrice2 record {|
     Max35Text Tp;
@@ -2110,7 +2110,7 @@ public type ProprietaryPrice2 record {|
 
 # Defines the structure for ProprietaryQuantity1, representing a proprietary quantity.
 #
-# + Tp  - Quantity type.
+# + Tp - Quantity type.
 # + Qty - Quantity value.
 public type ProprietaryQuantity1 record {|
     Max35Text Tp;
@@ -2119,7 +2119,7 @@ public type ProprietaryQuantity1 record {|
 
 # Defines the structure for ProprietaryReference1, representing a proprietary reference.
 #
-# + Tp  - Reference type.
+# + Tp - Reference type.
 # + Ref - Reference value.
 public type ProprietaryReference1 record {|
     Max35Text Tp;
@@ -2128,8 +2128,8 @@ public type ProprietaryReference1 record {|
 
 # Defines the structure for Rate4, representing an interest rate or fee rate.
 #
-# + Tp        - Rate type.
-# + VldtyRg   - Validity range for the rate.
+# + Tp - Rate type.
+# + VldtyRg - Validity range for the rate.
 public type Rate4 record {|
     RateType4Choice Tp;
     ActiveOrHistoricCurrencyAndAmountRange2 VldtyRg?;
@@ -2137,8 +2137,8 @@ public type Rate4 record {|
 
 # Defines the structure for RateType4Choice, offering a choice between a percentage rate and an alternative rate type.
 #
-# + Pctg  - Percentage rate.
-# + Othr  - Other rate type.
+# + Pctg - Percentage rate.
+# + Othr - Other rate type.
 public type RateType4Choice record {|
     PercentageRate Pctg?;
     Max35Text Othr?;
@@ -2146,25 +2146,25 @@ public type RateType4Choice record {|
 
 # Defines the structure for ReportEntry14, representing a report entry with various details including amount, status, and charges.
 #
-# + NtryRef         - Entry reference.
-# + Amt             - Entry amount.
-# + CdtDbtInd       - Credit or debit indicator.
-# + RvslInd         - Reversal indicator.
-# + Sts             - Entry status.
-# + BookgDt         - Booking date.
-# + ValDt           - Value date.
-# + AcctSvcrRef     - Account servicer reference.
-# + Avlbty          - Cash availability details.
-# + BkTxCd          - Bank transaction code.
-# + ComssnWvrInd    - Commission waiver indicator.
-# + AddtlInfInd     - Additional information indicator.
-# + AmtDtls         - Amount and currency exchange details.
-# + Chrgs           - Charges applied to the entry.
-# + TechInptChanl   - Technical input channel used.
-# + Intrst          - Interest details.
-# + CardTx          - Card transaction details.
-# + NtryDtls        - Entry details.
-# + AddtlNtryInf    - Additional entry information.
+# + NtryRef - Entry reference.
+# + Amt - Entry amount.
+# + CdtDbtInd - Credit or debit indicator.
+# + RvslInd - Reversal indicator.
+# + Sts - Entry status.
+# + BookgDt - Booking date.
+# + ValDt - Value date.
+# + AcctSvcrRef - Account servicer reference.
+# + Avlbty - Cash availability details.
+# + BkTxCd - Bank transaction code.
+# + ComssnWvrInd - Commission waiver indicator.
+# + AddtlInfInd - Additional information indicator.
+# + AmtDtls - Amount and currency exchange details.
+# + Chrgs - Charges applied to the entry.
+# + TechInptChanl - Technical input channel used.
+# + Intrst - Interest details.
+# + CardTx - Card transaction details.
+# + NtryDtls - Entry details.
+# + AddtlNtryInf - Additional entry information.
 public type ReportEntry14 record {|
     Max35Text NtryRef?;
     ActiveOrHistoricCurrencyAndAmount Amt;
@@ -2189,7 +2189,7 @@ public type ReportEntry14 record {|
 
 # Defines the structure for ReportingSource1Choice, offering a choice between an external reporting source code and a proprietary source.
 #
-# + Cd    - External reporting source code.
+# + Cd - External reporting source code.
 # + Prtry - Proprietary source.
 public type ReportingSource1Choice record {|
     ExternalReportingSource1Code Cd?;
@@ -2198,7 +2198,7 @@ public type ReportingSource1Choice record {|
 
 # Defines the structure for ReturnReason5Choice, offering a choice between an external return reason code and a proprietary reason.
 #
-# + Cd    - External return reason code.
+# + Cd - External return reason code.
 # + Prtry - Proprietary reason.
 public type ReturnReason5Choice record {|
     ExternalReturnReason1Code Cd?;
@@ -2207,9 +2207,9 @@ public type ReturnReason5Choice record {|
 
 # Defines the structure for SecuritiesAccount19, representing a securities account including its identifier, type, and name.
 #
-# + Id   - Account identifier.
-# + Tp   - Account type.
-# + Nm   - Account name.
+# + Id - Account identifier.
+# + Tp - Account type.
+# + Nm - Account name.
 public type SecuritiesAccount19 record {|
     Max35Text Id;
     GenericIdentification30 Tp?;
@@ -2218,9 +2218,9 @@ public type SecuritiesAccount19 record {|
 
 # Defines the structure for SecurityIdentification19, representing security identification details including ISIN and other identifiers.
 #
-# + ISIN   - ISIN identifier.
+# + ISIN - ISIN identifier.
 # + OthrId - Other security identifiers.
-# + Desc   - Security description.
+# + Desc - Security description.
 public type SecurityIdentification19 record {|
     ISINOct2015Identifier ISIN?;
     OtherIdentification1[] OthrId?;
@@ -2233,7 +2233,7 @@ public enum SequenceType3Code {
 
 # Defines the structure for ServiceLevel8Choice, offering a choice between an external service level code and a proprietary service level.
 #
-# + Cd    - External service level code.
+# + Cd - External service level code.
 # + Prtry - Proprietary service level.
 public type ServiceLevel8Choice record {|
     ExternalServiceLevel1Code Cd?;
@@ -2242,9 +2242,9 @@ public type ServiceLevel8Choice record {|
 
 # Defines the structure for TaxCharges2, representing tax charges applied to a transaction.
 #
-# + Id    - Tax identifier.
-# + Rate  - Tax rate.
-# + Amt   - Tax amount.
+# + Id - Tax identifier.
+# + Rate - Tax rate.
+# + Amt - Tax amount.
 public type TaxCharges2 record {|
     Max35Text Id?;
     PercentageRate Rate?;
@@ -2253,7 +2253,7 @@ public type TaxCharges2 record {|
 
 # Defines the structure for TechnicalInputChannel1Choice, offering a choice between an external technical input channel and a proprietary channel.
 #
-# + Cd    - External technical input channel code.
+# + Cd - External technical input channel code.
 # + Prtry - Proprietary input channel.
 public type TechnicalInputChannel1Choice record {|
     ExternalTechnicalInputChannel1Code Cd?;
@@ -2262,10 +2262,10 @@ public type TechnicalInputChannel1Choice record {|
 
 # Defines the structure for TotalTransactions6, representing totals for transactions including credit and debit entries.
 #
-# + TtlNtries            - Total entries.
-# + TtlCdtNtries         - Total credit entries.
-# + TtlDbtNtries         - Total debit entries.
-# + TtlNtriesPerBkTxCd   - Totals per bank transaction code.
+# + TtlNtries - Total entries.
+# + TtlCdtNtries - Total credit entries.
+# + TtlDbtNtries - Total debit entries.
+# + TtlNtriesPerBkTxCd - Totals per bank transaction code.
 public type TotalTransactions6 record {|
     NumberAndSumOfTransactions4 TtlNtries?;
     NumberAndSumOfTransactions1 TtlCdtNtries?;
@@ -2275,15 +2275,15 @@ public type TotalTransactions6 record {|
 
 # Defines the structure for TotalsPerBankTransactionCode5, representing totals for entries per bank transaction code.
 #
-# + NbOfNtries   - Number of entries.
-# + Sum          - Sum of the entries.
-# + TtlNetNtry   - Total net entry.
-# + CdtNtries    - Credit entries.
-# + DbtNtries    - Debit entries.
-# + FcstInd      - Forecast indicator.
-# + BkTxCd       - Bank transaction code.
-# + Avlbty       - Availability information.
-# + Dt           - Date of the entries.
+# + NbOfNtries - Number of entries.
+# + Sum - Sum of the entries.
+# + TtlNetNtry - Total net entry.
+# + CdtNtries - Credit entries.
+# + DbtNtries - Debit entries.
+# + FcstInd - Forecast indicator.
+# + BkTxCd - Bank transaction code.
+# + Avlbty - Availability information.
+# + Dt - Date of the entries.
 public type TotalsPerBankTransactionCode5 record {|
     Max15NumericText NbOfNtries?;
     DecimalNumber Sum?;
@@ -2298,7 +2298,7 @@ public type TotalsPerBankTransactionCode5 record {|
 
 # Defines the structure for TrackData1, representing track data on a payment card.
 #
-# + TrckNb  - Track number.
+# + TrckNb - Track number.
 # + TrckVal - Track value.
 public type TrackData1 record {|
     Exact1NumericText TrckNb?;
@@ -2307,18 +2307,18 @@ public type TrackData1 record {|
 
 # Defines the structure for TransactionAgents6, representing agents involved in a transaction including debtor, creditor, and intermediaries.
 #
-# + InstgAgt    - Instructing agent.
-# + InstdAgt    - Instructed agent.
-# + DbtrAgt     - Debtor agent.
-# + CdtrAgt     - Creditor agent.
-# + IntrmyAgt1  - First intermediary agent.
-# + IntrmyAgt2  - Second intermediary agent.
-# + IntrmyAgt3  - Third intermediary agent.
-# + RcvgAgt     - Receiving agent.
-# + DlvrgAgt    - Delivering agent.
-# + IssgAgt     - Issuing agent.
-# + SttlmPlc    - Settlement place.
-# + Prtry       - Proprietary agents.
+# + InstgAgt - Instructing agent.
+# + InstdAgt - Instructed agent.
+# + DbtrAgt - Debtor agent.
+# + CdtrAgt - Creditor agent.
+# + IntrmyAgt1 - First intermediary agent.
+# + IntrmyAgt2 - Second intermediary agent.
+# + IntrmyAgt3 - Third intermediary agent.
+# + RcvgAgt - Receiving agent.
+# + DlvrgAgt - Delivering agent.
+# + IssgAgt - Issuing agent.
+# + SttlmPlc - Settlement place.
+# + Prtry - Proprietary agents.
 public type TransactionAgents6 record {|
     BranchAndFinancialInstitutionIdentification8 InstgAgt?;
     BranchAndFinancialInstitutionIdentification8 InstdAgt?;
@@ -2966,7 +2966,6 @@ public type OriginalGroupInformation29 record {|
     Max35Text OrgnlMsgNmId;
     ISODateTime OrgnlCreDtTm?;
 |};
-
 
 # Defines the structure for MandateRelatedData3Choice, representing choices for mandate-related data.
 #

@@ -13,6 +13,7 @@
 // KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations
 // under the License.
+import ballerina/data.xmldata;
 
 # Defines the structure for the Camt054Document1.
 public type Camt054Document1 Camt054Document;
@@ -66,6 +67,12 @@ public type BankToCustomerDebitCreditNotificationV12 record {|
 # Defines the structure for the Camt054Document, which contains the bank-to-customer debit/credit notification details.
 #
 # + BkToCstmrDbtCdtNtfctn - The bank-to-customer debit/credit notification
+@xmldata:Name {
+    value: "Document"
+}
+@xmldata:Namespace {
+    uri: "urn:iso:std:iso:20022:tech:xsd:camt.054.001.12"
+}
 public type Camt054Document record {|
     BankToCustomerDebitCreditNotificationV12 BkToCstmrDbtCdtNtfctn;
 |};

@@ -13,6 +13,7 @@
 // KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations
 // under the License.
+import ballerina/data.xmldata;
 
 # Defines the Camt028Document123 structure.
 public type Camt028Document123 Camt028Document;
@@ -35,6 +36,12 @@ public type AdditionalPaymentInformationV12 record {|
 # Defines the Camt028Document structure.
 #
 # + AddtlPmtInf - Additional payment information details
+@xmldata:Name {
+    value: "Document"
+}
+@xmldata:Namespace {
+    uri: "urn:iso:std:iso:20022:tech:xsd:camt.028.001.12"
+}
 public type Camt028Document record {|
     AdditionalPaymentInformationV12 AddtlPmtInf;
 |};

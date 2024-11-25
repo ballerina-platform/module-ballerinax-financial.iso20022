@@ -13,6 +13,7 @@
 // KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations
 // under the License.
+import ballerina/data.xmldata;
 
 # Defines the structure for the Pain008Document1.
 public type Pain008Document1 Pain008Document;
@@ -72,6 +73,12 @@ public type DirectDebitTransactionInformation32 record {|
 # Defines the structure for Pain008Document, which encapsulates the customer direct debit initiation information.
 #
 # + CstmrDrctDbtInitn - Customer direct debit initiation information
+@xmldata:Name {
+    value: "Document"
+}
+@xmldata:Namespace {
+    uri: "urn:iso:std:iso:20022:tech:xsd:pain.008.001.11"
+}
 public type Pain008Document record {|
     CustomerDirectDebitInitiationV11 CstmrDrctDbtInitn;
 |};

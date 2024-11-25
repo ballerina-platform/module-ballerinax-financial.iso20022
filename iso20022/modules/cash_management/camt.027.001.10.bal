@@ -13,6 +13,7 @@
 // KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations
 // under the License.
+import ballerina/data.xmldata;
 
 # Defines the Camt027Document1 structure.
 public type Camt027Document1 Camt027Document;
@@ -37,6 +38,12 @@ public type ClaimNonReceiptV10 record {|
 # Defines the Camt027Document structure.
 #
 # + ClmNonRct - Claim non-receipt details
+@xmldata:Name {
+    value: "Document"
+}
+@xmldata:Namespace {
+    uri: "urn:iso:std:iso:20022:tech:xsd:camt.027.001.10"
+}
 public type Camt027Document record {|
     ClaimNonReceiptV10 ClmNonRct;
 |};

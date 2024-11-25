@@ -13,6 +13,7 @@
 // KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations
 // under the License.
+import ballerina/data.xmldata;
 
 # Defines the structure for the Pacs002Document1.
 public type Pacs002Document1 Pacs002Document;
@@ -20,6 +21,12 @@ public type Pacs002Document1 Pacs002Document;
 # Defines the structure for Pacs002Document, which encapsulates the payment status report details.
 #
 # + FIToFIPmtStsRpt - Payment status report information
+@xmldata:Name {
+    value: "Document"
+}
+@xmldata:Namespace {
+    uri: "urn:iso:std:iso:20022:tech:xsd:pacs.002.001.14"
+}
 public type Pacs002Document record {|
     FIToFIPaymentStatusReportV14 FIToFIPmtStsRpt;
 |};

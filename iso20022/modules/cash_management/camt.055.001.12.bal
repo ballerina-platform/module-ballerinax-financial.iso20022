@@ -13,6 +13,7 @@
 // KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations
 // under the License.
+import ballerina/data.xmldata;
 
 # Defines the structure for the Camt055Document1.
 public type Camt055Document1 Camt055Document;
@@ -35,6 +36,12 @@ public type CustomerPaymentCancellationRequestV12 record {|
 # Defines the structure for Camt055Document, which contains the customer payment cancellation request details.
 #
 # + CstmrPmtCxlReq - The customer payment cancellation request
+@xmldata:Name {
+    value: "Document"
+}
+@xmldata:Namespace {
+    uri: "urn:iso:std:iso:20022:tech:xsd:camt.055.001.12"
+}
 public type Camt055Document record {|
     CustomerPaymentCancellationRequestV12 CstmrPmtCxlReq;
 |};
