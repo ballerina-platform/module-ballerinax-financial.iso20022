@@ -15,6 +15,22 @@
 // under the License.
 import ballerina/data.xmldata;
 
+# Defines the Camt057Envelope1 structure.
+public type Camt057Envelope1 Camt057Envelope;
+
+# Defines the Camt057Envelope structure containing the Business Application Header
+# and the Document body.
+#
+# + AppHdr - Business Application Header  
+# + Document - Camt057Document
+@xmldata:Name {
+    value: "Envelope"
+}
+public type Camt057Envelope record {|
+    BusinessApplicationHeaderV04 AppHdr?;
+    Camt057Document Document;
+|};
+
 # Defines the structure for the Camt057Document1.
 public type Camt057Document1 Camt057Document;
 
@@ -48,9 +64,6 @@ public type AccountNotification23 record {|
 # Defines the structure for Camt057Document, which contains the notification to receive details.
 #
 # + NtfctnToRcv - The notification to receive
-@xmldata:Name {
-    value: "Document"
-}
 @xmldata:Namespace {
     uri: "urn:iso:std:iso:20022:tech:xsd:camt.057.001.08"
 }

@@ -15,6 +15,22 @@
 // under the License.
 import ballerina/data.xmldata;
 
+# Defines the Pacs008Envelope1 structure.
+public type Pacs008Envelope1 Pacs008Envelope;
+
+# Defines the Pacs008Envelope structure containing the Business Application Header
+# and the Document body.
+#
+# + AppHdr - Business Application Header  
+# + Document - Pacs008Document
+@xmldata:Name {
+    value: "Envelope"
+}
+public type Pacs008Envelope record {|
+    BusinessApplicationHeaderV04 AppHdr?;
+    Pacs008Document Document;
+|};
+
 # Defines the structure for the Pacs008Document1.
 public type Pacs008Document1 Pacs008Document;
 
@@ -120,9 +136,6 @@ public type CreditTransferTransaction64 record {|
 # Defines the structure for Pacs008Document, which encapsulates the customer credit transfer transaction details.
 #
 # + FIToFICstmrCdtTrf - Customer credit transfer transaction information
-@xmldata:Name {
-    value: "Document"
-}
 @xmldata:Namespace {
     uri: "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.12"
 }

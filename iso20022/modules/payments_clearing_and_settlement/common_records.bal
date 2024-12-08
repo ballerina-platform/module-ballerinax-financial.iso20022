@@ -3240,3 +3240,64 @@ public type DirectDebitTransaction12 record {|
     Max35Text PreNtfctnId?;
     ISODate PreNtfctnDt?;
 |};
+
+# Defines the structure for CreditTransferTransaction63, which contains additional details for a credit transfer transaction.
+#
+# + UltmtDbtr - Optional ultimate debtor identification
+# + InitgPty - Optional initiating party information
+# + Dbtr - Debtor identification
+# + DbtrAcct - Optional debtor account information
+# + DbtrAgt - Debtor agent information
+# + DbtrAgtAcct - Optional debtor agent account information
+# + PrvsInstgAgt1 - Optional previous instructing agent information
+# + PrvsInstgAgt1Acct - Optional previous instructing agent account information
+# + PrvsInstgAgt2 - Optional previous instructing agent information
+# + PrvsInstgAgt2Acct - Optional previous instructing agent account information
+# + PrvsInstgAgt3 - Optional previous instructing agent information
+# + PrvsInstgAgt3Acct - Optional previous instructing agent account information
+# + IntrmyAgt1 - Optional intermediary agent information
+# + IntrmyAgt1Acct - Optional intermediary agent account information
+# + IntrmyAgt2 - Optional intermediary agent information
+# + IntrmyAgt2Acct - Optional intermediary agent account information
+# + IntrmyAgt3 - Optional intermediary agent information
+# + IntrmyAgt3Acct - Optional intermediary agent account information
+# + CdtrAgt - Creditor agent information
+# + CdtrAgtAcct - Optional creditor agent account information
+# + Cdtr - Creditor identification
+# + CdtrAcct - Optional creditor account information
+# + UltmtCdtr - Optional ultimate creditor identification
+# + InstrForCdtrAgt - Array of instructions for the creditor agent
+# + InstrForNxtAgt - Array of instructions for the next agent
+# + Tax - Optional tax information
+# + RmtInf - Optional remittance information
+# + InstdAmt - Optional instructed amount
+public type CreditTransferTransaction63 record {|
+    PartyIdentification272 UltmtDbtr?;
+    PartyIdentification272 InitgPty?;
+    PartyIdentification272 Dbtr;
+    CashAccount40 DbtrAcct?;
+    BranchAndFinancialInstitutionIdentification8 DbtrAgt;
+    CashAccount40 DbtrAgtAcct?;
+    BranchAndFinancialInstitutionIdentification8 PrvsInstgAgt1?;
+    CashAccount40 PrvsInstgAgt1Acct?;
+    BranchAndFinancialInstitutionIdentification8 PrvsInstgAgt2?;
+    CashAccount40 PrvsInstgAgt2Acct?;
+    BranchAndFinancialInstitutionIdentification8 PrvsInstgAgt3?;
+    CashAccount40 PrvsInstgAgt3Acct?;
+    BranchAndFinancialInstitutionIdentification8 IntrmyAgt1?;
+    CashAccount40 IntrmyAgt1Acct?;
+    BranchAndFinancialInstitutionIdentification8 IntrmyAgt2?;
+    CashAccount40 IntrmyAgt2Acct?;
+    BranchAndFinancialInstitutionIdentification8 IntrmyAgt3?;
+    CashAccount40 IntrmyAgt3Acct?;
+    BranchAndFinancialInstitutionIdentification8 CdtrAgt;
+    CashAccount40 CdtrAgtAcct?;
+    PartyIdentification272 Cdtr;
+    CashAccount40 CdtrAcct?;
+    PartyIdentification272 UltmtCdtr?;
+    InstructionForCreditorAgent3[] InstrForCdtrAgt?;
+    InstructionForNextAgent1[] InstrForNxtAgt?;
+    TaxData1 Tax?;
+    RemittanceInformation22 RmtInf?;
+    ActiveOrHistoricCurrencyAndAmount InstdAmt?;
+|};

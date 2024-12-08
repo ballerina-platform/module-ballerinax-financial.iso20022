@@ -15,6 +15,22 @@
 // under the License.
 import ballerina/data.xmldata;
 
+# Defines the Camt026Envelope1 structure.
+public type Camt026Envelope1 Camt026Envelope;
+
+# Defines the Camt026Envelope structure containing the Business Application Header
+# and the Document body.
+#
+# + AppHdr - Business Application Header  
+# + Document - Camt026Document;
+@xmldata:Name {
+    value: "Envelope"
+}
+public type Camt026Envelope record {|
+    BusinessApplicationHeaderV04 AppHdr?;
+    Camt026Document Document;
+|};
+
 # Defines the Camt026Document1 structure.
 public type Camt026Document1 Camt026Document;
 
@@ -24,9 +40,6 @@ public type AMLIndicator boolean;
 # Defines the Camt026Document structure.
 #
 # + UblToApply - The unable to apply information
-@xmldata:Name {
-    value: "Document"
-}
 @xmldata:Namespace {
     uri: "urn:iso:std:iso:20022:tech:xsd:camt.026.001.10"
 }

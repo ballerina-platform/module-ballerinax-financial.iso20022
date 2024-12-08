@@ -15,15 +15,28 @@
 // under the License.
 import ballerina/data.xmldata;
 
+# Defines the Camt033Envelope1 structure.
+public type Camt033Envelope1 Camt033Envelope;
+
+# Defines the Camt033Envelope structure containing the Business Application Header
+# and the Document body.
+#
+# + AppHdr - Business Application Header  
+# + Document - Camt033Document
+@xmldata:Name {
+    value: "Envelope"
+}
+public type Camt033Envelope record {|
+    BusinessApplicationHeaderV04 AppHdr?;
+    Camt033Document Document;
+|};
+
 # Defines the structure for the Camt033Document1.
 public type Camt033Document1 Camt033Document;
 
 # Defines the structure for Camt033Document, a record that holds the request for duplicate message details.
 #
 # + ReqForDplct - The request for a duplicate of the previously sent message
-@xmldata:Name {
-    value: "Document"
-}
 @xmldata:Namespace {
     uri: "urn:iso:std:iso:20022:tech:xsd:camt.033.001.07"
 }
