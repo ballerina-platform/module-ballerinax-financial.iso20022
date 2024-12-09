@@ -15,6 +15,22 @@
 // under the License.
 import ballerina/data.xmldata;
 
+# Defines the Camt029Envelope1 structure.
+public type Camt029Envelope1 Camt029Envelope;
+
+# Defines the Camt029Envelope structure containing the Business Application Header
+# and the Document body.
+#
+# + AppHdr - Business Application Header  
+# + Document - Camt029Document
+@xmldata:Name {
+    value: "Envelope"
+}
+public type Camt029Envelope record {|
+    BusinessApplicationHeaderV04 AppHdr?;
+    Camt029Document Document;
+|};
+
 # Defines the Camt029Document1 structure.
 public type Camt029Document1 Camt029Document;
 
@@ -171,9 +187,6 @@ public type CorrectiveTransaction5Choice record {|
 # Defines the Camt029Document structure.
 #
 # + RsltnOfInvstgtn - The resolution of the investigation details
-@xmldata:Name {
-    value: "Document"
-}
 @xmldata:Namespace {
     uri: "urn:iso:std:iso:20022:tech:xsd:camt.029.001.13"
 }

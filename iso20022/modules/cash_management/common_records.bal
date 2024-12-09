@@ -3265,3 +3265,20 @@ public type DirectDebitTransaction12 record {|
     Max35Text PreNtfctnId?;
     ISODate PreNtfctnDt?;
 |};
+
+# Defines the structure for GroupHeader103, which provides header information for a cheque notification.
+#
+# + MsgId - Message identifier
+# + CreDtTm - Creation date and time of the message
+# + NbOfChqs - Number of cheques in the message
+# + CtrlSum - Optional control sum for the message
+public type GroupHeader103 record {|
+    Max35Text MsgId;
+    ISODateTime CreDtTm;
+    Max15NumericText NbOfChqs;
+    DecimalNumber CtrlSum?;
+|};
+
+public enum ChequePartyRole1Code {
+    DWEA, DWRA, PAYE, PAYR
+};
