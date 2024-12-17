@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Pacs010Envelope1 structure.
-public type Pacs010Envelope1 Pacs010Envelope;
-
 # Defines the Pacs010Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Pacs010Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Pacs010Document Document;
 |};
-
-# Defines the structure for the Pacs010Document1
-public type Pacs010Document1 Pacs010Document;
 
 # Defines the structure for CreditTransferTransaction66, which details a credit transfer transaction related to direct debits.
 #

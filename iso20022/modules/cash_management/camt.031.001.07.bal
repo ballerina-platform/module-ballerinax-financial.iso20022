@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Camt031Envelope1 structure.
-public type Camt031Envelope1 Camt031Envelope;
-
 # Defines the Camt031Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Camt031Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Camt031Document Document;
 |};
-
-# Defines the structure for the Camt031Document1.
-public type Camt031Document1 Camt031Document;
 
 # Defines the structure for Camt031Document, a record that holds the rejection investigation details.
 #

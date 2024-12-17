@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Camt029Envelope1 structure.
-public type Camt029Envelope1 Camt029Envelope;
-
 # Defines the Camt029Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Camt029Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Camt029Document Document;
 |};
-
-# Defines the Camt029Document1 structure.
-public type Camt029Document1 Camt029Document;
 
 public enum CancellationIndividualStatus1Code {
     RJCR, ACCR, PDCR

@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Camt109Envelope1 structure.
-public type Camt109Envelope1 Camt109Envelope;
-
 # Defines the Camt109Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Camt109Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Camt109Document Document;
 |};
-
-# Defines the structure for the Camt0109Document1.
-public type Camt109Document1 Camt109Document;
 
 # Defines the structure for Cheque18, which represents a cheque and its details in a cancellation or stop report.
 #

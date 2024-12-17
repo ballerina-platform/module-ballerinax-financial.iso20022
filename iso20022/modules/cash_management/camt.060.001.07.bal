@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Camt060Envelope1 structure.
-public type Camt060Envelope1 Camt060Envelope;
-
 # Defines the Camt060Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Camt060Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Camt060Document Document;
 |};
-
-# Defines the structure for the Camt060Document1.
-public type Camt060Document1 Camt060Document;
 
 # Defines the structure for AccountReportingRequestV07, which contains details about the account reporting request.
 #

@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Camt055Envelope1 structure.
-public type Camt055Envelope1 Camt055Envelope;
-
 # Defines the Camt055Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Camt055Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Camt055Document Document;
 |};
-
-# Defines the structure for the Camt055Document1.
-public type Camt055Document1 Camt055Document;
 
 # Defines the structure for CustomerPaymentCancellationRequestV12, which contains the details of a customer payment cancellation request.
 #

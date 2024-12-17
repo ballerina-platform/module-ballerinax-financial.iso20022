@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Pain001Envelope1 structure.
-public type Pain001Envelope1 Pain001Envelope;
-
 # Defines the Pain001Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Pain001Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Pain001Document Document;
 |};
-
-# Defines the structure for the Pain001Document1.
-public type Pain001Document1 Pain001Document;
 
 # Defines the structure for Cheque19, which contains details about a cheque.
 #

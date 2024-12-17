@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Pain008Envelope1 structure.
-public type Pain008Envelope1 Pain008Envelope;
-
 # Defines the Pain008Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Pain008Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Pain008Document Document;
 |};
-
-# Defines the structure for the Pain008Document1.
-public type Pain008Document1 Pain008Document;
 
 # Defines the structure for CustomerDirectDebitInitiationV11, containing details about customer direct debit initiation.
 #

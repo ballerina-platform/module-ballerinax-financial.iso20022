@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Camt058Envelope1 structure.
-public type Camt058Envelope1 Camt058Envelope;
-
 # Defines the Camt058Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Camt058Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Camt058Document Document;
 |};
-
-# Defines the structure for the Camt058Document1.
-public type Camt058Document1 Camt058Document;
 
 # Represents the root element for the Notification to Receive Cancellation Advice (camt.058) message.
 #

@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Camt026Envelope1 structure.
-public type Camt026Envelope1 Camt026Envelope;
-
 # Defines the Camt026Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Camt026Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Camt026Document Document;
 |};
-
-# Defines the Camt026Document1 structure.
-public type Camt026Document1 Camt026Document;
 
 # Defines the AMLIndicator structure.
 public type AMLIndicator boolean;

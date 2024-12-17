@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Pacs002Envelope1 structure.
-public type Pacs002Envelope1 Pacs002Envelope;
-
 # Defines the Pacs002Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Pacs002Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Pacs002Document Document;
 |};
-
-# Defines the structure for the Pacs002Document1.
-public type Pacs002Document1 Pacs002Document;
 
 # Defines the structure for Pacs002Document, which encapsulates the payment status report details.
 #

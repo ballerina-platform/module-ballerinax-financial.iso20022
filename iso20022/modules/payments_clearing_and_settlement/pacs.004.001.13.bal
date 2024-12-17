@@ -1,8 +1,5 @@
 import ballerina/data.xmldata;
 
-# Defines the Pacs004Envelope1 structure.
-public type Pacs004Envelope1 Pacs004Envelope;
-
 # Defines the Pacs004Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -15,9 +12,6 @@ public type Pacs004Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Pacs004Document Document;
 |};
-
-# Defines the structure for the Pacs003Document1.
-public type Pacs004Document1 Pacs004Document;
 
 # Defines the structure for Pacs004Document, which represents the root element of the Payment Return message.
 #

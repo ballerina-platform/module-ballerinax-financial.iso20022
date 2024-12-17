@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Pain002Envelope1 structure.
-public type Pain002Envelope1 Pain002Envelope;
-
 # Defines the Pain002Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Pain002Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Pain002Document Document;
 |};
-
-# Defines the structure for the Pain002Document1.
-public type Pain002Document1 Pain002Document;
 
 # Defines the structure for CurrencyExchange13, representing details of a currency exchange.
 #

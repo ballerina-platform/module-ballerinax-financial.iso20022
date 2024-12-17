@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Camt050Envelope1 structure.
-public type Camt050Envelope1 Camt050Envelope;
-
 # Defines the Camt050Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Camt050Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Camt050Document Document;
 |};
-
-# Defines the structure for the Camt050Document1.
-public type Camt050Document1 Camt050Document;
 
 # Defines the structure for Amount2Choice, which represents an amount that can be specified either with or without currency.
 #

@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Camt054Envelope1 structure.
-public type Camt054Envelope1 Camt054Envelope;
-
 # Defines the Camt054Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Camt054Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Camt054Document Document;
 |};
-
-# Defines the structure for the Camt054Document1.
-public type Camt054Document1 Camt054Document;
 
 # Defines the structure for AccountNotification22, which contains the details of an account notification.
 #

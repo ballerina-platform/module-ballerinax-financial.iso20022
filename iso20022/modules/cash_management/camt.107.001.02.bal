@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Camt107Envelope1 structure.
-public type Camt107Envelope1 Camt107Envelope;
-
 # Defines the Camt107Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Camt107Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Camt107Document Document;
 |};
-
-# Defines the structure for the Camt0107Document1.
-public type Camt107Document1 Camt107Document;
 
 # Defines the structure for Cheque17, which represents the details of a cheque.
 #

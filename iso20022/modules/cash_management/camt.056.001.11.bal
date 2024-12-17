@@ -15,9 +15,6 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the Camt056Envelope1 structure.
-public type Camt056Envelope1 Camt056Envelope;
-
 # Defines the Camt056Envelope structure containing the Business Application Header
 # and the Document body.
 #
@@ -30,9 +27,6 @@ public type Camt056Envelope record {|
     BusinessApplicationHeaderV04 AppHdr?;
     Camt056Document Document;
 |};
-
-# Defines the structure for the Camt056Document1.
-public type Camt056Document1 Camt056Document;
 
 # Defines the structure for Camt056Document, which contains the FI to FI payment cancellation request details.
 #
