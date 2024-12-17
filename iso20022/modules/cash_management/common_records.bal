@@ -34,21 +34,14 @@ public type AccountSchemeName1Choice record {|
     Max35Text Prtry?;
 |};
 
-# Defines the structure for ActiveOrHistoricCurrencyAndAmount_SimpleType, representing a simple type with currency and amount.
-#
-# + ActiveOrHistoricCurrencyAndAmount_SimpleType - The decimal amount.
-# + Ccy - The currency of the amount.
-public type ActiveOrHistoricCurrencyAndAmount_SimpleType record {|
-    decimal ActiveOrHistoricCurrencyAndAmount_SimpleType;
-    @xmldata:Attribute
-    ActiveOrHistoricCurrencyCode Ccy;
-|};
-
 # Defines the structure for ActiveOrHistoricCurrencyAndAmount, representing an amount and its associated currency.
 #
-# + ActiveOrHistoricCurrencyAndAmount_SimpleType - The simple type of the currency and amount.
+# + content - The decimal amount.
+# + Ccy - The currency of the amount.
 public type ActiveOrHistoricCurrencyAndAmount record {|
-    ActiveOrHistoricCurrencyAndAmount_SimpleType ActiveOrHistoricCurrencyAndAmount_SimpleType;
+    decimal content;
+    @xmldata:Attribute
+    ActiveOrHistoricCurrencyCode Ccy;
 |};
 
 # Defines ActiveOrHistoricCurrencyCode as a string representing either active or historic currency codes.
@@ -1039,41 +1032,27 @@ public type AccountInterest4 record {|
     TaxCharges2 Tax?;
 |};
 
-# Defines the structure for ActiveCurrencyAndAmount_SimpleType, representing an amount in a specific currency.
-#
-# + ActiveCurrencyAndAmount_SimpleType - The amount in a specified currency.
-# + Ccy - The currency code as an XML attribute.
-public type ActiveCurrencyAndAmount_SimpleType record {|
-    decimal ActiveCurrencyAndAmount_SimpleType;
-    @xmldata:Attribute
-    ActiveCurrencyCode Ccy;
-|};
-
 # Defines the structure for ActiveCurrencyAndAmount, representing an amount with its currency.
 #
-# + ActiveCurrencyAndAmount_SimpleType - The amount and currency details.
+# + content - The amount in a specified currency.
+# + Ccy - The currency code as an XML attribute.
 public type ActiveCurrencyAndAmount record {|
-    ActiveCurrencyAndAmount_SimpleType ActiveCurrencyAndAmount_SimpleType;
+    decimal content;
+    @xmldata:Attribute
+    ActiveCurrencyCode Ccy;
 |};
 
 # Defines the type for ActiveCurrencyCode, representing a currency code as a string.
 public type ActiveCurrencyCode string;
 
-# Defines the structure for ActiveOrHistoricCurrencyAnd13DecimalAmount_SimpleType, representing an amount with currency code.
-#
-# + ActiveOrHistoricCurrencyAnd13DecimalAmount_SimpleType - The amount in a historical or active currency.
-# + Ccy - The currency code as an XML attribute.
-public type ActiveOrHistoricCurrencyAnd13DecimalAmount_SimpleType record {|
-    decimal ActiveOrHistoricCurrencyAnd13DecimalAmount_SimpleType;
-    @xmldata:Attribute
-    ActiveOrHistoricCurrencyCode Ccy;
-|};
-
 # Defines the structure for ActiveOrHistoricCurrencyAnd13DecimalAmount, representing an amount with historical currency.
 #
-# + ActiveOrHistoricCurrencyAnd13DecimalAmount_SimpleType - The amount and currency details.
+# + content - The amount in a historical or active currency.
+# + Ccy - The currency code as an XML attribute.
 public type ActiveOrHistoricCurrencyAnd13DecimalAmount record {|
-    ActiveOrHistoricCurrencyAnd13DecimalAmount_SimpleType ActiveOrHistoricCurrencyAnd13DecimalAmount_SimpleType;
+    decimal content;
+    @xmldata:Attribute
+    ActiveOrHistoricCurrencyCode Ccy;
 |};
 
 # Defines the structure for ActiveOrHistoricCurrencyAndAmountRange2, representing a currency amount range.
@@ -3265,3 +3244,20 @@ public type DirectDebitTransaction12 record {|
     Max35Text PreNtfctnId?;
     ISODate PreNtfctnDt?;
 |};
+
+# Defines the structure for GroupHeader103, which provides header information for a cheque notification.
+#
+# + MsgId - Message identifier
+# + CreDtTm - Creation date and time of the message
+# + NbOfChqs - Number of cheques in the message
+# + CtrlSum - Optional control sum for the message
+public type GroupHeader103 record {|
+    Max35Text MsgId;
+    ISODateTime CreDtTm;
+    Max15NumericText NbOfChqs;
+    DecimalNumber CtrlSum?;
+|};
+
+public enum ChequePartyRole1Code {
+    DWEA, DWRA, PAYE, PAYR
+};

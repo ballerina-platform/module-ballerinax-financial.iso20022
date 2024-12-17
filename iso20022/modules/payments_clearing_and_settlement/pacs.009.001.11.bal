@@ -15,8 +15,18 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the structure for the Pacs009Document1.
-public type Pac009Document1 Pacs009Document;
+# Defines the Pacs009Envelope structure containing the Business Application Header
+# and the Document body.
+#
+# + AppHdr - Business Application Header  
+# + Document - Pacs009Document
+@xmldata:Name {
+    value: "Envelope"
+}
+public type Pacs009Envelope record {|
+    BusinessApplicationHeaderV04 AppHdr?;
+    Pacs009Document Document;
+|};
 
 # Defines the structure for CreditTransferTransaction62, which details a credit transfer transaction.
 #
@@ -99,73 +109,9 @@ public type CreditTransferTransaction62 record {|
     SupplementaryData1[] SplmtryData?;
 |};
 
-# Defines the structure for CreditTransferTransaction63, which contains additional details for a credit transfer transaction.
-#
-# + UltmtDbtr - Optional ultimate debtor identification
-# + InitgPty - Optional initiating party information
-# + Dbtr - Debtor identification
-# + DbtrAcct - Optional debtor account information
-# + DbtrAgt - Debtor agent information
-# + DbtrAgtAcct - Optional debtor agent account information
-# + PrvsInstgAgt1 - Optional previous instructing agent information
-# + PrvsInstgAgt1Acct - Optional previous instructing agent account information
-# + PrvsInstgAgt2 - Optional previous instructing agent information
-# + PrvsInstgAgt2Acct - Optional previous instructing agent account information
-# + PrvsInstgAgt3 - Optional previous instructing agent information
-# + PrvsInstgAgt3Acct - Optional previous instructing agent account information
-# + IntrmyAgt1 - Optional intermediary agent information
-# + IntrmyAgt1Acct - Optional intermediary agent account information
-# + IntrmyAgt2 - Optional intermediary agent information
-# + IntrmyAgt2Acct - Optional intermediary agent account information
-# + IntrmyAgt3 - Optional intermediary agent information
-# + IntrmyAgt3Acct - Optional intermediary agent account information
-# + CdtrAgt - Creditor agent information
-# + CdtrAgtAcct - Optional creditor agent account information
-# + Cdtr - Creditor identification
-# + CdtrAcct - Optional creditor account information
-# + UltmtCdtr - Optional ultimate creditor identification
-# + InstrForCdtrAgt - Array of instructions for the creditor agent
-# + InstrForNxtAgt - Array of instructions for the next agent
-# + Tax - Optional tax information
-# + RmtInf - Optional remittance information
-# + InstdAmt - Optional instructed amount
-public type CreditTransferTransaction63 record {|
-    PartyIdentification272 UltmtDbtr?;
-    PartyIdentification272 InitgPty?;
-    PartyIdentification272 Dbtr;
-    CashAccount40 DbtrAcct?;
-    BranchAndFinancialInstitutionIdentification8 DbtrAgt;
-    CashAccount40 DbtrAgtAcct?;
-    BranchAndFinancialInstitutionIdentification8 PrvsInstgAgt1?;
-    CashAccount40 PrvsInstgAgt1Acct?;
-    BranchAndFinancialInstitutionIdentification8 PrvsInstgAgt2?;
-    CashAccount40 PrvsInstgAgt2Acct?;
-    BranchAndFinancialInstitutionIdentification8 PrvsInstgAgt3?;
-    CashAccount40 PrvsInstgAgt3Acct?;
-    BranchAndFinancialInstitutionIdentification8 IntrmyAgt1?;
-    CashAccount40 IntrmyAgt1Acct?;
-    BranchAndFinancialInstitutionIdentification8 IntrmyAgt2?;
-    CashAccount40 IntrmyAgt2Acct?;
-    BranchAndFinancialInstitutionIdentification8 IntrmyAgt3?;
-    CashAccount40 IntrmyAgt3Acct?;
-    BranchAndFinancialInstitutionIdentification8 CdtrAgt;
-    CashAccount40 CdtrAgtAcct?;
-    PartyIdentification272 Cdtr;
-    CashAccount40 CdtrAcct?;
-    PartyIdentification272 UltmtCdtr?;
-    InstructionForCreditorAgent3[] InstrForCdtrAgt?;
-    InstructionForNextAgent1[] InstrForNxtAgt?;
-    TaxData1 Tax?;
-    RemittanceInformation22 RmtInf?;
-    ActiveOrHistoricCurrencyAndAmount InstdAmt?;
-|};
-
 # Defines the structure for Pacs009Document, which encapsulates the financial institution credit transfer transaction information.
 #
 # + FICdtTrf - Financial institution credit transfer transaction information
-@xmldata:Name {
-    value: "Document"
-}
 @xmldata:Namespace {
     uri: "urn:iso:std:iso:20022:tech:xsd:pacs.009.001.11"
 }

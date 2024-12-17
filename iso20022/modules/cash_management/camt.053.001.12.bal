@@ -15,8 +15,18 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the structure for the Camt053Document1.
-public type Camt053Document1 Camt053Document;
+# Defines the Camt053Envelope structure containing the Business Application Header
+# and the Document body.
+#
+# + AppHdr - Business Application Header  
+# + Document - Camt053Document
+@xmldata:Name {
+    value: "Envelope"
+}
+public type Camt053Envelope record {|
+    BusinessApplicationHeaderV04 AppHdr?;
+    Camt053Document Document;
+|};
 
 # Defines the structure for AccountStatement13, which contains the details of an account statement.
 #
@@ -69,9 +79,6 @@ public type BankToCustomerStatementV12 record {|
 # Defines the structure for the Camt053Document, which contains the bank-to-customer statement details.
 #
 # + BkToCstmrStmt - The bank-to-customer statement
-@xmldata:Name {
-    value: "Document"
-}
 @xmldata:Namespace {
     uri: "urn:iso:std:iso:20022:tech:xsd:camt.053.001.12"
 }

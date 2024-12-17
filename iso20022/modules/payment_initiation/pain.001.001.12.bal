@@ -15,8 +15,18 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the structure for the Pain001Document1.
-public type Pain001Document1 Pain001Document;
+# Defines the Pain001Envelope structure containing the Business Application Header
+# and the Document body.
+#
+# + AppHdr - Business Application Header  
+# + Document - Pain001Document
+@xmldata:Name {
+    value: "Envelope"
+}
+public type Pain001Envelope record {|
+    BusinessApplicationHeaderV04 AppHdr?;
+    Pain001Document Document;
+|};
 
 # Defines the structure for Cheque19, which contains details about a cheque.
 #
@@ -135,9 +145,6 @@ public type CustomerCreditTransferInitiationV12 record {|
 # Defines the structure for Pain001Document, which encapsulates the customer credit transfer initiation information.
 #
 # + CstmrCdtTrfInitn - Customer credit transfer initiation information
-@xmldata:Name {
-    value: "Document"
-}
 @xmldata:Namespace {
     uri: "urn:iso:std:iso:20022:tech:xsd:pain.001.001.12"
 }

@@ -15,8 +15,18 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the structure for the Camt050Document1.
-public type Camt050Document1 Camt050Document;
+# Defines the Camt050Envelope structure containing the Business Application Header
+# and the Document body.
+#
+# + AppHdr - Business Application Header  
+# + Document - Camt050Document
+@xmldata:Name {
+    value: "Envelope"
+}
+public type Camt050Envelope record {|
+    BusinessApplicationHeaderV04 AppHdr?;
+    Camt050Document Document;
+|};
 
 # Defines the structure for Amount2Choice, which represents an amount that can be specified either with or without currency.
 #
@@ -30,9 +40,6 @@ public type Amount2Choice record {|
 # Defines the structure for the Camt050Document, which contains liquidity credit transfer details.
 #
 # + LqdtyCdtTrf - The liquidity credit transfer message details
-@xmldata:Name {
-    value: "Document"
-}
 @xmldata:Namespace {
     uri: "urn:iso:std:iso:20022:tech:xsd:camt.050.001.07"
 }
