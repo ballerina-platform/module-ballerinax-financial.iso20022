@@ -34,21 +34,14 @@ public type AccountSchemeName1Choice record {|
     Max35Text Prtry?;
 |};
 
-# Defines the structure for ActiveOrHistoricCurrencyAndAmount_SimpleType, representing a simple type with currency and amount.
-#
-# + ActiveOrHistoricCurrencyAndAmount_SimpleType - The decimal amount.
-# + Ccy - The currency of the amount.
-public type ActiveOrHistoricCurrencyAndAmount_SimpleType record {|
-    decimal ActiveOrHistoricCurrencyAndAmount_SimpleType;
-    @xmldata:Attribute
-    ActiveOrHistoricCurrencyCode Ccy;
-|};
-
 # Defines the structure for ActiveOrHistoricCurrencyAndAmount, representing an amount and its associated currency.
 #
-# + ActiveOrHistoricCurrencyAndAmount_SimpleType - The simple type of the currency and amount.
+# + content - The decimal amount.
+# + Ccy - The currency of the amount.
 public type ActiveOrHistoricCurrencyAndAmount record {|
-    ActiveOrHistoricCurrencyAndAmount_SimpleType ActiveOrHistoricCurrencyAndAmount_SimpleType;
+    decimal content;
+    @xmldata:Attribute
+    ActiveOrHistoricCurrencyCode Ccy;
 |};
 
 # Defines ActiveOrHistoricCurrencyCode as a string representing either active or historic currency codes.
@@ -1039,41 +1032,27 @@ public type AccountInterest4 record {|
     TaxCharges2 Tax?;
 |};
 
-# Defines the structure for ActiveCurrencyAndAmount_SimpleType, representing an amount in a specific currency.
-#
-# + ActiveCurrencyAndAmount_SimpleType - The amount in a specified currency.
-# + Ccy - The currency code as an XML attribute.
-public type ActiveCurrencyAndAmount_SimpleType record {|
-    decimal ActiveCurrencyAndAmount_SimpleType;
-    @xmldata:Attribute
-    ActiveCurrencyCode Ccy;
-|};
-
 # Defines the structure for ActiveCurrencyAndAmount, representing an amount with its currency.
 #
-# + ActiveCurrencyAndAmount_SimpleType - The amount and currency details.
+# + content - The amount in a specified currency.
+# + Ccy - The currency code as an XML attribute.
 public type ActiveCurrencyAndAmount record {|
-    ActiveCurrencyAndAmount_SimpleType ActiveCurrencyAndAmount_SimpleType;
+    decimal content;
+    @xmldata:Attribute
+    ActiveCurrencyCode Ccy;
 |};
 
 # Defines the type for ActiveCurrencyCode, representing a currency code as a string.
 public type ActiveCurrencyCode string;
 
-# Defines the structure for ActiveOrHistoricCurrencyAnd13DecimalAmount_SimpleType, representing an amount with currency code.
-#
-# + ActiveOrHistoricCurrencyAnd13DecimalAmount_SimpleType - The amount in a historical or active currency.
-# + Ccy - The currency code as an XML attribute.
-public type ActiveOrHistoricCurrencyAnd13DecimalAmount_SimpleType record {|
-    decimal ActiveOrHistoricCurrencyAnd13DecimalAmount_SimpleType;
-    @xmldata:Attribute
-    ActiveOrHistoricCurrencyCode Ccy;
-|};
-
 # Defines the structure for ActiveOrHistoricCurrencyAnd13DecimalAmount, representing an amount with historical currency.
 #
-# + ActiveOrHistoricCurrencyAnd13DecimalAmount_SimpleType - The amount and currency details.
+# + content - The amount in a historical or active currency.
+# + Ccy - The currency code as an XML attribute.
 public type ActiveOrHistoricCurrencyAnd13DecimalAmount record {|
-    ActiveOrHistoricCurrencyAnd13DecimalAmount_SimpleType ActiveOrHistoricCurrencyAnd13DecimalAmount_SimpleType;
+    decimal content;
+    @xmldata:Attribute
+    ActiveOrHistoricCurrencyCode Ccy;
 |};
 
 # Defines the structure for ActiveOrHistoricCurrencyAndAmountRange2, representing a currency amount range.
@@ -3239,4 +3218,65 @@ public type DirectDebitTransaction12 record {|
     PartyIdentification272 CdtrSchmeId?;
     Max35Text PreNtfctnId?;
     ISODate PreNtfctnDt?;
+|};
+
+# Defines the structure for CreditTransferTransaction63, which contains additional details for a credit transfer transaction.
+#
+# + UltmtDbtr - Optional ultimate debtor identification
+# + InitgPty - Optional initiating party information
+# + Dbtr - Debtor identification
+# + DbtrAcct - Optional debtor account information
+# + DbtrAgt - Debtor agent information
+# + DbtrAgtAcct - Optional debtor agent account information
+# + PrvsInstgAgt1 - Optional previous instructing agent information
+# + PrvsInstgAgt1Acct - Optional previous instructing agent account information
+# + PrvsInstgAgt2 - Optional previous instructing agent information
+# + PrvsInstgAgt2Acct - Optional previous instructing agent account information
+# + PrvsInstgAgt3 - Optional previous instructing agent information
+# + PrvsInstgAgt3Acct - Optional previous instructing agent account information
+# + IntrmyAgt1 - Optional intermediary agent information
+# + IntrmyAgt1Acct - Optional intermediary agent account information
+# + IntrmyAgt2 - Optional intermediary agent information
+# + IntrmyAgt2Acct - Optional intermediary agent account information
+# + IntrmyAgt3 - Optional intermediary agent information
+# + IntrmyAgt3Acct - Optional intermediary agent account information
+# + CdtrAgt - Creditor agent information
+# + CdtrAgtAcct - Optional creditor agent account information
+# + Cdtr - Creditor identification
+# + CdtrAcct - Optional creditor account information
+# + UltmtCdtr - Optional ultimate creditor identification
+# + InstrForCdtrAgt - Array of instructions for the creditor agent
+# + InstrForNxtAgt - Array of instructions for the next agent
+# + Tax - Optional tax information
+# + RmtInf - Optional remittance information
+# + InstdAmt - Optional instructed amount
+public type CreditTransferTransaction63 record {|
+    PartyIdentification272 UltmtDbtr?;
+    PartyIdentification272 InitgPty?;
+    PartyIdentification272 Dbtr;
+    CashAccount40 DbtrAcct?;
+    BranchAndFinancialInstitutionIdentification8 DbtrAgt;
+    CashAccount40 DbtrAgtAcct?;
+    BranchAndFinancialInstitutionIdentification8 PrvsInstgAgt1?;
+    CashAccount40 PrvsInstgAgt1Acct?;
+    BranchAndFinancialInstitutionIdentification8 PrvsInstgAgt2?;
+    CashAccount40 PrvsInstgAgt2Acct?;
+    BranchAndFinancialInstitutionIdentification8 PrvsInstgAgt3?;
+    CashAccount40 PrvsInstgAgt3Acct?;
+    BranchAndFinancialInstitutionIdentification8 IntrmyAgt1?;
+    CashAccount40 IntrmyAgt1Acct?;
+    BranchAndFinancialInstitutionIdentification8 IntrmyAgt2?;
+    CashAccount40 IntrmyAgt2Acct?;
+    BranchAndFinancialInstitutionIdentification8 IntrmyAgt3?;
+    CashAccount40 IntrmyAgt3Acct?;
+    BranchAndFinancialInstitutionIdentification8 CdtrAgt;
+    CashAccount40 CdtrAgtAcct?;
+    PartyIdentification272 Cdtr;
+    CashAccount40 CdtrAcct?;
+    PartyIdentification272 UltmtCdtr?;
+    InstructionForCreditorAgent3[] InstrForCdtrAgt?;
+    InstructionForNextAgent1[] InstrForNxtAgt?;
+    TaxData1 Tax?;
+    RemittanceInformation22 RmtInf?;
+    ActiveOrHistoricCurrencyAndAmount InstdAmt?;
 |};

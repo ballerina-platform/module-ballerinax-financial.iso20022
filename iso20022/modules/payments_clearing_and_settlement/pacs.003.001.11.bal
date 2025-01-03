@@ -15,8 +15,18 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the structure for the Pacs003Document1.
-public type Pac003Document1 Pacs003Document;
+# Defines the Pacs003Envelope structure containing the Business Application Header
+# and the Document body.
+#
+# + AppHdr - Business Application Header  
+# + Document - Pacs003Document
+@xmldata:Name {
+    value: "Envelope"
+}
+public type Pacs003Envelope record {|
+    BusinessApplicationHeaderV04 AppHdr?;
+    Pacs003Document Document;
+|};
 
 # Defines the structure for DirectDebitTransactionInformation31, which details a direct debit transaction.
 #
@@ -98,9 +108,6 @@ public type DirectDebitTransactionInformation31 record {|
 # Defines the structure for Pacs003Document, which encapsulates the customer direct debit transaction details.
 #
 # + FIToFICstmrDrctDbt - Customer direct debit transaction information
-@xmldata:Name {
-    value: "Document"
-}
 @xmldata:Namespace {
     uri: "urn:iso:std:iso:20022:tech:xsd:pacs.003.001.11"
 }

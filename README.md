@@ -21,13 +21,19 @@ The ISO 20022 library provides a comprehensive collection of ISO 20022 records, 
 - camt.055.001.11
 - camt.056.001.12
 - camt.057.001.08
+- camt.058.001.09
 - camt.060.001.07
+- camt.107.001.02
+- camt.108.001.02
+- camt.109.001.02
 - pacs.002.001.14
 - pacs.003.001.11
+- pacs.004.001.13
 - pacs.008.001.12
 - pacs.009.001.11
 - pacs.010.001.06
 - pain.001.001.12
+- pain.002.001.14
 - pain.008.001.11
 
 ## Available Submodules

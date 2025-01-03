@@ -15,8 +15,18 @@
 // under the License.
 import ballerina/data.xmldata;
 
-# Defines the structure for the Camt054Document1.
-public type Camt054Document1 Camt054Document;
+# Defines the Camt054Envelope structure containing the Business Application Header
+# and the Document body.
+#
+# + AppHdr - Business Application Header  
+# + Document - Camt054Document
+@xmldata:Name {
+    value: "Envelope"
+}
+public type Camt054Envelope record {|
+    BusinessApplicationHeaderV04 AppHdr?;
+    Camt054Document Document;
+|};
 
 # Defines the structure for AccountNotification22, which contains the details of an account notification.
 #
@@ -67,9 +77,6 @@ public type BankToCustomerDebitCreditNotificationV12 record {|
 # Defines the structure for the Camt054Document, which contains the bank-to-customer debit/credit notification details.
 #
 # + BkToCstmrDbtCdtNtfctn - The bank-to-customer debit/credit notification
-@xmldata:Name {
-    value: "Document"
-}
 @xmldata:Namespace {
     uri: "urn:iso:std:iso:20022:tech:xsd:camt.054.001.12"
 }
