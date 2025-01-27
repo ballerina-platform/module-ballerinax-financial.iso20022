@@ -57,9 +57,6 @@ public type CustomerPaymentStatusReportV14 record {|
 # Represents the root element for a Payment Status Report in the pain.002 message.
 #
 # + CstmrPmtStsRpt - The payment status report details
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:pain.002.001.14"
-}
 public type Pain002Document record {|
     CustomerPaymentStatusReportV14 CstmrPmtStsRpt;
 |};

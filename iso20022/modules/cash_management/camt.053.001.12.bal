@@ -79,9 +79,6 @@ public type BankToCustomerStatementV12 record {|
 # Defines the structure for the Camt053Document, which contains the bank-to-customer statement details.
 #
 # + BkToCstmrStmt - The bank-to-customer statement
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:camt.053.001.12"
-}
 public type Camt053Document record {|
     BankToCustomerStatementV12 BkToCstmrStmt;
 |};

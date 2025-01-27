@@ -115,9 +115,6 @@ public type DirectDebitTransactionInformation33 record {|
 # Defines the structure for Pacs010Document, which encapsulates the financial institution direct debit transaction information.
 #
 # + FIDrctDbt - Financial institution direct debit transaction information
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:pacs.010.001.06"
-}
 public type Pacs010Document record {|
     FinancialInstitutionDirectDebitV06 FIDrctDbt;
 |};

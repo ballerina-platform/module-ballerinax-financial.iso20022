@@ -40,9 +40,6 @@ public type Amount2Choice record {|
 # Defines the structure for the Camt050Document, which contains liquidity credit transfer details.
 #
 # + LqdtyCdtTrf - The liquidity credit transfer message details
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:camt.050.001.07"
-}
 public type Camt050Document record {|
     LiquidityCreditTransferV07 LqdtyCdtTrf;
 |};

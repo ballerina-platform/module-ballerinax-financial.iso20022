@@ -31,9 +31,6 @@ public type Camt033Envelope record {|
 # Defines the structure for Camt033Document, a record that holds the request for duplicate message details.
 #
 # + ReqForDplct - The request for a duplicate of the previously sent message
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:camt.033.001.07"
-}
 public type Camt033Document record {|
     RequestForDuplicateV07 ReqForDplct;
 |};

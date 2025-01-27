@@ -181,9 +181,6 @@ public type CorrectiveTransaction5Choice record {|
 # Defines the Camt029Document structure.
 #
 # + RsltnOfInvstgtn - The resolution of the investigation details
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:camt.029.001.13"
-}
 public type Camt029Document record {|
     ResolutionOfInvestigationV13 RsltnOfInvstgtn;
 |};

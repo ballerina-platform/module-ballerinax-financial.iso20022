@@ -73,9 +73,6 @@ public type ChequePresentmentNotificationV02 record {|
 # Represents the root element for the Cheque Presentment Notification (camt.107) message.
 #
 # + ChqPresntmntNtfctn - Details of the cheque presentment notification
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:camt.107.001.02"
-}
 public type Camt107Document record {|
     ChequePresentmentNotificationV02 ChqPresntmntNtfctn;
 |};

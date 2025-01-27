@@ -112,9 +112,6 @@ public type CreditTransferTransaction62 record {|
 # Defines the structure for Pacs009Document, which encapsulates the financial institution credit transfer transaction information.
 #
 # + FICdtTrf - Financial institution credit transfer transaction information
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:pacs.009.001.11"
-}
 public type Pacs009Document record {|
     FinancialInstitutionCreditTransferV11 FICdtTrf;
 |};

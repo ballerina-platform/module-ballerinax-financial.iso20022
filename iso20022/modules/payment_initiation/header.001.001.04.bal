@@ -1,5 +1,3 @@
-import ballerina/data.xmldata;
-
 # Defines the AppHdr type as a reference to BusinessApplicationHeaderV04.
 public type AppHdr BusinessApplicationHeaderV04;
 
@@ -50,9 +48,6 @@ public type BusinessApplicationHeader8 record {|
 # + Prty - Business message priority
 # + Sgntr - Digital signature details
 # + Rltd - Related business application headers
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:head.001.001.04"
-}
 public type BusinessApplicationHeaderV04 record {|
     UnicodeChartsCode CharSet?;
     Party51Choice Fr;
