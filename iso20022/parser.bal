@@ -10,7 +10,7 @@ import ballerina/data.xmldata;
 # + recordType - A `typedesc` representing the Ballerina record type into which the XML will be parsed.
 # + return - The parsed Ballerina record if successful, or an error if the parsing fails.
 public isolated function fromIso20022(xml xmlContent, typedesc<record {}> recordType) returns record {}|error {
-    return xmldata:parseAsType(xmlContent, t = recordType);
+    return xmldata:parseAsType(xmlContent, {textFieldName: "content"}, recordType);
 }
 
 # Converts the given ISO 20022 record into XML format.
@@ -22,5 +22,5 @@ public isolated function fromIso20022(xml xmlContent, typedesc<record {}> record
 # + recordValue - The Ballerina record representing the ISO 20022 message to be converted.
 # + return - The generated XML if successful, or an error if the conversion fails.
 public isolated function toIso20022Xml(record {} recordValue) returns xml|error {
-    return xmldata:toXml(recordValue);
+    return xmldata:toXml(recordValue, {textFieldName: "content"});
 }
