@@ -3261,3 +3261,92 @@ public type GroupHeader103 record {|
 public enum ChequePartyRole1Code {
     DWEA, DWRA, PAYE, PAYR
 };
+
+# Defines the ActiveCurrencyAndAmount_SimpleType as a decimal value.
+public type ActiveCurrencyAndAmount_SimpleType decimal;
+
+# Defines the ChargesBreakdown1 structure to represent the breakdown of charges.
+#
+# + Amt - Amount of charges in active currency.
+# + CdtDbtInd - Credit or debit indicator.
+# + Tp - Type of charges.
+public type ChargesBreakdown1 record {|
+    ActiveCurrencyAndAmount Amt;
+    CreditDebitCode CdtDbtInd?;
+    ChargeType3Choice Tp?;
+|};
+
+# Defines the ExternalInstructedAgentInstruction1Code type as a string for instructed agent instructions.
+public type ExternalInstructedAgentInstruction1Code string;
+
+# Defines the InstructionForInstructedAgent1 structure representing instructions for the instructed agent.
+#
+# + Cd - Code representing the instruction.
+# + InstrInf - Instruction information in text.
+public type InstructionForInstructedAgent1 record {|
+    ExternalInstructedAgentInstruction1Code Cd?;
+    Max140Text InstrInf?;
+|};
+
+# Defines the TotalCharges7 structure representing total charges information.
+#
+# + NbOfChrgsRcrds - Number of charges records.
+# + CtrlSum - Control sum for total charges.
+# + TtlChrgsAmt - Total charges amount.
+# + CdtDbtInd - Credit or debit indicator.
+public type TotalCharges7 record {|
+    Max15NumericText NbOfChrgsRcrds;
+    DecimalNumber CtrlSum?;
+    ActiveCurrencyAndAmount TtlChrgsAmt?;
+    CreditDebitCode CdtDbtInd?;
+|};
+
+# Defines the TotalCharges8 structure representing detailed total charges information.
+#
+# + NbOfChrgsBrkdwnItms - Number of charges breakdown items.
+# + CtrlSum - Control sum for total charges.
+# + TtlChrgsAmt - Total charges amount.
+# + CdtDbtInd - Credit or debit indicator.
+public type TotalCharges8 record {|
+    Max15NumericText NbOfChrgsBrkdwnItms;
+    DecimalNumber CtrlSum?;
+    ActiveCurrencyAndAmount TtlChrgsAmt?;
+    CreditDebitCode CdtDbtInd?;
+|};
+
+# Defines the TransactionReferences7 structure representing references for transactions.
+#
+# + MsgId - Message identifier.
+# + MsgNmId - Message name identifier.
+# + AcctSvcrRef - Account servicing reference.
+# + PmtInfId - Payment information identifier.
+# + InstrId - Instruction identifier.
+# + EndToEndId - End-to-end identifier.
+# + UETR - Unique end-to-end transaction reference.
+# + TxId - Transaction identifier.
+# + MndtId - Mandate identifier.
+# + ChqNb - Cheque number.
+# + ClrSysRef - Clearing system reference.
+# + AcctOwnrTxId - Account owner transaction identifier.
+# + AcctSvcrTxId - Account servicing transaction identifier.
+# + MktInfrstrctrTxId - Market infrastructure transaction identifier.
+# + PrcgId - Processing identifier.
+# + Prtry - Proprietary references.
+public type TransactionReferences7 record {|
+    Max35Text MsgId?;
+    Max35Text MsgNmId?;
+    Max35Text AcctSvcrRef?;
+    Max35Text PmtInfId?;
+    Max35Text InstrId?;
+    Max35Text EndToEndId?;
+    UUIDv4Identifier UETR?;
+    Max35Text TxId?;
+    Max35Text MndtId?;
+    Max35Text ChqNb?;
+    Max35Text ClrSysRef?;
+    Max35Text AcctOwnrTxId?;
+    Max35Text AcctSvcrTxId?;
+    Max35Text MktInfrstrctrTxId?;
+    Max35Text PrcgId?;
+    ProprietaryReference1[] Prtry?;
+|};
