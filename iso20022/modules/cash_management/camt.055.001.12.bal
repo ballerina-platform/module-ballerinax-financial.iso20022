@@ -46,9 +46,6 @@ public type CustomerPaymentCancellationRequestV12 record {|
 # Defines the structure for Camt055Document, which contains the customer payment cancellation request details.
 #
 # + CstmrPmtCxlReq - The customer payment cancellation request
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:camt.055.001.12"
-}
 public type Camt055Document record {|
     CustomerPaymentCancellationRequestV12 CstmrPmtCxlReq;
 |};

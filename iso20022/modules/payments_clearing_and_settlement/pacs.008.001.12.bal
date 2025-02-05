@@ -130,9 +130,6 @@ public type CreditTransferTransaction64 record {|
 # Defines the structure for Pacs008Document, which encapsulates the customer credit transfer transaction details.
 #
 # + FIToFICstmrCdtTrf - Customer credit transfer transaction information
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.12"
-}
 public type Pacs008Document record {|
     FIToFICustomerCreditTransferV12 FIToFICstmrCdtTrf;
 |};

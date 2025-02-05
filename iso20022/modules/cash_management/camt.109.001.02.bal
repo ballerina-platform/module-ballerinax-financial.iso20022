@@ -91,9 +91,6 @@ public type ChequeCancellationStatus1Choice record {|
 # Defines the structure for Camt109Document, which represents the root document for a cheque cancellation or stop report.
 #
 # + ChqCxlOrStopRpt - Report containing details of cheques and their cancellation or stop status.
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:camt.109.001.02"
-}
 public type Camt109Document record {|
     ChequeCancellationOrStopReportV02 ChqCxlOrStopRpt;
 |};

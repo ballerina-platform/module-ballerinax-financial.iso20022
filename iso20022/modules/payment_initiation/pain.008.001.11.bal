@@ -83,9 +83,6 @@ public type DirectDebitTransactionInformation32 record {|
 # Defines the structure for Pain008Document, which encapsulates the customer direct debit initiation information.
 #
 # + CstmrDrctDbtInitn - Customer direct debit initiation information
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:pain.008.001.11"
-}
 public type Pain008Document record {|
     CustomerDirectDebitInitiationV11 CstmrDrctDbtInitn;
 |};

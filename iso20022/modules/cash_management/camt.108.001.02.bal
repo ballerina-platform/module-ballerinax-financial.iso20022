@@ -91,9 +91,6 @@ public type ChequeCancellationReason1Choice record {|
 # Represents the root element for the Cheque Cancellation or Stop Request (camt.108) message.
 #
 # + ChqCxlOrStopReq - Details of the cheque cancellation or stop request
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:camt.108.001.02"
-}
 public type Camt108Document record {|
     ChequeCancellationOrStopRequestV02 ChqCxlOrStopReq;
 |};

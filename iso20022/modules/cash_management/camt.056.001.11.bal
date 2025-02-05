@@ -31,9 +31,6 @@ public type Camt056Envelope record {|
 # Defines the structure for Camt056Document, which contains the FI to FI payment cancellation request details.
 #
 # + FIToFIPmtCxlReq - The FI to FI payment cancellation request
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:camt.056.001.11"
-}
 public type Camt056Document record {|
     FIToFIPaymentCancellationRequestV11 FIToFIPmtCxlReq;
 |};

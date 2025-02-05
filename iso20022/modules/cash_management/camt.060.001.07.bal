@@ -51,9 +51,6 @@ public type DatePeriod3 record {|
 # Defines the structure for Camt060Document, which encapsulates the account reporting request details.
 #
 # + AcctRptgReq - Account reporting request information
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:camt.060.001.07"
-}
 public type Camt060Document record {|
     AccountReportingRequestV07 AcctRptgReq;
 |};

@@ -79,9 +79,6 @@ public type BankToCustomerAccountReportV12 record {|
 # Defines the structure for the Camt052Document, which contains the bank-to-customer account report details.
 #
 # + BkToCstmrAcctRpt - The bank-to-customer account report
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:camt.052.001.12"
-}
 public type Camt052Document record {|
     BankToCustomerAccountReportV12 BkToCstmrAcctRpt;
 |};

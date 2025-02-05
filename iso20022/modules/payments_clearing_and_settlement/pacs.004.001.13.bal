@@ -16,9 +16,6 @@ public type Pacs004Envelope record {|
 # Defines the structure for Pacs004Document, which represents the root element of the Payment Return message.
 #
 # + PmtRtr - Contains the details of the payment return
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:pacs.004.001.13"
-}
 public type Pacs004Document record {|
     PaymentReturnV13 PmtRtr;
 |};

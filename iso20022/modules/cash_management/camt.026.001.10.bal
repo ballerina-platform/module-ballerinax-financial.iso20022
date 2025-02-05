@@ -34,9 +34,6 @@ public type AMLIndicator boolean;
 # Defines the Camt026Document structure.
 #
 # + UblToApply - The unable to apply information
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:camt.026.001.10"
-}
 public type Camt026Document record {|
     UnableToApplyV10 UblToApply;
 |};

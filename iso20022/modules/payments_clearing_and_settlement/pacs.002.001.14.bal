@@ -31,9 +31,6 @@ public type Pacs002Envelope record {|
 # Defines the structure for Pacs002Document, which encapsulates the payment status report details.
 #
 # + FIToFIPmtStsRpt - Payment status report information
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:pacs.002.001.14"
-}
 public type Pacs002Document record {|
     FIToFIPaymentStatusReportV14 FIToFIPmtStsRpt;
 |};

@@ -58,9 +58,6 @@ public type AccountNotification23 record {|
 # Defines the structure for Camt057Document, which contains the notification to receive details.
 #
 # + NtfctnToRcv - The notification to receive
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:camt.057.001.08"
-}
 public type Camt057Document record {|
     NotificationToReceiveV08 NtfctnToRcv;
 |};

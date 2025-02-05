@@ -31,9 +31,6 @@ public type Camt058Envelope record {|
 # Represents the root element for the Notification to Receive Cancellation Advice (camt.058) message.
 #
 # + NtfctnToRcvCxlAdvc - Details of the notification to receive cancellation advice
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:camt.058.001.09"
-}
 public type Camt058Document record {|
     NotificationToReceiveCancellationAdviceV09 NtfctnToRcvCxlAdvc;
 |};

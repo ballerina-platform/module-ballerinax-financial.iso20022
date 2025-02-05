@@ -108,9 +108,6 @@ public type DirectDebitTransactionInformation31 record {|
 # Defines the structure for Pacs003Document, which encapsulates the customer direct debit transaction details.
 #
 # + FIToFICstmrDrctDbt - Customer direct debit transaction information
-@xmldata:Namespace {
-    uri: "urn:iso:std:iso:20022:tech:xsd:pacs.003.001.11"
-}
 public type Pacs003Document record {|
     FIToFICustomerDirectDebitV11 FIToFICstmrDrctDbt;
 |};
