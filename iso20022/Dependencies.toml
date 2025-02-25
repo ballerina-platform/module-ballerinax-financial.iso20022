@@ -46,7 +46,7 @@ modules = [
 [[package]]
 org = "ballerinax"
 name = "financial.iso20022"
-version = "2.0.0"
+version = "2.0.1"
 dependencies = [
 	{org = "ballerina", name = "data.xmldata"},
 	{org = "ballerinai", name = "observe"}
@@ -57,3 +57,4 @@ modules = [
 	{org = "ballerinax", packageName = "financial.iso20022", moduleName = "financial.iso20022.payment_initiation"},
 	{org = "ballerinax", packageName = "financial.iso20022", moduleName = "financial.iso20022.payments_clearing_and_settlement"}
 ]
+
