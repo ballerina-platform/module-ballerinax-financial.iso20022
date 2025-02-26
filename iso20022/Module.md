@@ -79,7 +79,7 @@ public function main() returns error? {
                         {OrgnlGrpInf:{OrgnlMsgId:"pacs9bizmsgidr01",OrgnlMsgNmId:"pacs.009.001.08"},
                         OrgnlInstrId:"pacs9bizmsgidr01",OrgnlEndToEndId:"pacs009EndToEndId-001",OrgnlUETR:"dab3b64f-092b-4839-b7e9-8f438af50961",OrgnlIntrBkSttlmAmt:{content:654489.98,Ccy:"EUR"},OrgnlIntrBkSttlmDt:"2020-08-03",RtrdIntrBkSttlmAmt:{content:654489.98,Ccy:"EUR"},IntrBkSttlmDt:"2020-08-03",ChrgBr:"SHAR",InstgAgt:{FinInstnId:{BICFI:"NDEAFIHHXXX"}},InstdAgt:{FinInstnId:{BICFI:"ABNANL2AXXX"}},RtrChain:{Dbtr:{Agt:{FinInstnId:{BICFI:"NDEAFIHHXXX"}}},CdtrAgt:{FinInstnId:{BICFI:"ABNANL2AXXX"}},Cdtr:{Agt:{FinInstnId:{BICFI:"RBOSGB2LXXX"}}}},RtrRsnInf:[{Rsn:{Cd:"AC04"}}]}]}}
     };
-    io:println(iso20022:toIso20022Xml(envelope));
+    io:println(iso20022:toXml(envelope));
 }
 ```
 
@@ -195,6 +195,6 @@ public function main() returns error? {
             </PmtRtr>
         </Document>
     </Envelope>`;
-    io:println(iso20022:fromIso20022(newXml, isorecord:Pacs004Envelope));
+    io:println(iso20022:parse(newXml, isorecord:Pacs004Envelope));
 }
 ```
