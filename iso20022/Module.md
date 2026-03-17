@@ -1,10 +1,15 @@
-# Ballerina ISO 20022 Library
-
 ## Overview
 
-ISO 20022 is an international standard for financial messaging that allows the exchange of structured and detailed information across different financial services, such as payments and securities. It uses a data-rich XML format, enabling more comprehensive data sharing compared to older formats like SWIFT MT. ISO 20022 also promotes global interoperability, reducing complexity by harmonizing financial communication standards across borders and sectors. As the financial industry adopts this standard, it supports innovation and digital transformation in financial messaging.
+ISO 20022 is an international standard for financial messaging that allows the exchange of structured and detailed information across different financial services, such as payments and securities. It uses a data-rich XML format, enabling more comprehensive data sharing compared to older formats like SWIFT MT.
 
-The ISO 20022 library provides a comprehensive collection of ISO 20022 records, organized into submodules for each message type category. This modular approach allows seamless integration with financial messaging systems, enabling users to create, manipulate, and parse ISO 20022-compliant messages specific to their needs. By offering a standardized solution for handling complex financial data, the library streamlines operations within Ballerina applications, making it easier to work with diverse ISO 20022 message categories.
+The ISO 20022 connector provides a comprehensive collection of ISO 20022 records, organized into submodules for each message type category. This modular approach allows seamless integration with financial messaging systems, enabling users to create, manipulate, and parse ISO 20022-compliant messages specific to their needs.
+
+### Key Features
+
+- Comprehensive collection of ISO 20022 message type records (camt, pacs, pain)
+- Create new ISO 20022 documents and convert to XML
+- Parse ISO 20022 XML into structured record types
+- Modular submodule organization by message category
 
 ## Supported ISO 20022 Message Types
 
